@@ -16,10 +16,10 @@ function init() {
         DifficultyController
         CreditsController
   */
-  let menuController = new MenuController();
-  let loginController = new LoginController();
-  let playController = new PlayController();
-  let scoresController = new ScoresController();
-  let difficultyController = new DifficultyController();
-  let creditsController = new CreditsController();
+  // let menuController = new MenuController();
+  // let loginController = new LoginController();
+  // let playController = new PlayController();
+  // let scoresController = new ScoresController();
+  // let difficultyController = new DifficultyController();
+  // let creditsController = new CreditsController();
 }
