@@ -2,7 +2,7 @@ export class CreditsView {
   constructor(controller) {
     this.controller = controller;
   }
-  showcreditsView() {
+  showCreditsView() {
     let creditsView = document.createElement("div");
     creditsView.className = "credits-view";
     creditsView.innerHTML = "Credits View";

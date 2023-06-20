@@ -7,6 +7,6 @@ export class CreditsController {
     this.service = new CreditsService(this);
   }
   showView() {
-    this.view.showcreditsView();
+    this.view.showCreditsView();
   }
 }

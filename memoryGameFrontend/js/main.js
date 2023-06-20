@@ -17,9 +17,9 @@ function init() {
         CreditsController
   */
   let menuController = new MenuController();
+  let loginController = new LoginController();
   let playController = new PlayController();
   let scoresController = new ScoresController();
-  let loginController = new LoginController();
-  let difficultyController = new DifficultyController()
+  let difficultyController = new DifficultyController();
   let creditsController = new CreditsController();
 }
