@@ -1,12 +1,9 @@
-import { MenuService } from "../../services/menuService/menuService.js";
 import { MenuView } from "../../views/menuView/menuView.js";
+import { Controller } from "../controller.js";
 
-export class MenuController {
-  constructor() {
-    this.view = new MenuView(this);
-    this.service = new MenuService(this);
-  }
-  showView() {
-    this.view.showMenuView();
+export class MenuController extends Controller {
+  constructor(gameManager, parent) {
+    super(gameManager);
+    this.view = new MenuView(this, parent);
   }
 }
