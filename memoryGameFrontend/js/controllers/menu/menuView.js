@@ -12,6 +12,6 @@ export class MenuView extends View {
     let playBtn = document.createElement("div");
     this.container.appendChild(playBtn);
     playBtn.innerHTML = "Play";
-    playBtn.className = "btn play-button";
+    playBtn.className = "btn-menu play-button";
   }
 }

@@ -1,4 +1,4 @@
-import { MenuView } from "../../views/menuView/menuView.js";
+import { MenuView } from "../menu/menuView.js";
 import { Controller } from "../controller.js";
 
 export class MenuController extends Controller {
