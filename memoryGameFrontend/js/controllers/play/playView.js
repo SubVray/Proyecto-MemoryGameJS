@@ -3,7 +3,7 @@ import { View } from "../view.js";
 export class MenuView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "menu-view";
+    this.container.className = "play-view";
 
     let loginBtn = document.createElement("div");
     this.container.appendChild(loginBtn);
