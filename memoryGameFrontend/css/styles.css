@@ -101,9 +101,10 @@ button {
 }
 
 .btn-menu {
+  height: 70px;
   padding: 15px 12px;
   transition: 0.3s ease;
-  width: 100%;
+  width: 280px;
 }
 
 button:is(:hover) {
@@ -136,9 +137,9 @@ button:is(:focus, :active) {
 }
 
 .created-by {
-  bottom: 15px;
+  bottom: 12px;
   color: rgb(255, 255, 255, 37%);
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   position: absolute;
 }
@@ -185,6 +186,24 @@ button:is(:focus, :active) {
 }
 
 /* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .navigation-container,
+  .content-container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .container {
+    max-width: 500px;
+    padding: 8px 15px;
+    width: 100%;
+  }
+  .text-login {
+    font-size: 0.7em;
+    text-align: center;
+  }
+}
+/* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .navigation-container,
   .content-container {
@@ -193,6 +212,7 @@ button:is(:focus, :active) {
   }
   .container {
     max-width: 500px;
+    padding: 8px 25px;
     width: 100%;
   }
 }

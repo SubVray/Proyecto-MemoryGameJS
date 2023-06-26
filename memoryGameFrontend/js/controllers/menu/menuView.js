@@ -20,11 +20,11 @@ export class MenuView extends View {
     creditsBtn.innerHTML = "Credits";
 
     loginBtn.className = " btn-menu login-button";
-    creditsBtn.className = "btn-menu play-button";
-    themesBtn.className = "btn-menu play-button";
-    difficultyBtn.className = "btn-menu play-button";
-    playBtn.className = "btn-menu play-button";
-    scoreBtn.className = "btn-menu play-button";
+    creditsBtn.className = "disable-btn btn-menu play-button";
+    themesBtn.className = "disable-btn btn-menu play-button";
+    difficultyBtn.className = "disable-btn btn-menu play-button";
+    playBtn.className = "disable-btn btn-menu play-button";
+    scoreBtn.className = "disable-btn btn-menu play-button";
 
     this.container.appendChild(loginBtn);
     this.container.appendChild(playBtn);

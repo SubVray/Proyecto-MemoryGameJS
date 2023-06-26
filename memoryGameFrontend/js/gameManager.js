@@ -3,6 +3,7 @@ import { ScoresController } from "./controllers/scores/scoresController.js";
 import { DifficultyController } from "./controllers/difficulty/difficultyController.js";
 import { ThemesController } from "./controllers/themes/themesController.js";
 import { LoginController } from "./controllers/login/loginController.js";
+import { PlayController } from "./controllers/play/playController.js";
 
 export class GameManager {
   constructor() {
@@ -28,7 +29,7 @@ export class GameManager {
       case 3:
         this.title.innerHTML = "Memory Game";
         this.backButton.classList.remove("disable");
-        this.controller = new MenuController(this, contentContainer);
+        this.controller = new PlayController(this, contentContainer);
         break;
       case 4:
         this.title.innerHTML = "Scores";

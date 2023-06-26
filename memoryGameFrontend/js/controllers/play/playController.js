@@ -1,9 +1,9 @@
-import { MenuView } from "../menu/menuView.js";
+import { PlayView } from "../play/playView.js";
 import { Controller } from "../controller.js";
 
-export class MenuController extends Controller {
+export class PlayController extends Controller {
   constructor(gameManager, parent) {
     super(gameManager);
-    this.view = new MenuView(this, parent);
+    this.view = new PlayView(this, parent);
   }
 }

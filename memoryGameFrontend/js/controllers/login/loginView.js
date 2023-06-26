@@ -6,12 +6,14 @@ export class LoginView extends View {
     this.container.className = "container login-view";
 
     let logo = document.createElement("img");
+    let form = document.createElement("form");
     let text = document.createElement("p");
     let usernameInput = document.createElement("input");
     let loginBtn = document.createElement("button");
 
+    form.className = "form-login ";
     loginBtn.className = "btn-login ";
-    text.className = "text-login"
+    text.className = "text-login";
 
     logo.src = "../../../../memoryGameFrontend/src/images/logo.png";
     logo.className = "logo";
@@ -21,7 +23,8 @@ export class LoginView extends View {
 
     this.container.appendChild(logo);
     this.container.appendChild(text);
-    this.container.appendChild(usernameInput);
-    this.container.appendChild(loginBtn);
+    this.container.appendChild(form);
+    form.appendChild(usernameInput);
+    form.appendChild(loginBtn);
   }
 }
