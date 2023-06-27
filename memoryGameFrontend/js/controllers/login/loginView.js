@@ -15,7 +15,7 @@ export class LoginView extends View {
     loginBtn.className = "btn-login ";
     text.className = "text-login";
 
-    logo.src = "../../../../memoryGameFrontend/src/images/logo.png";
+    logo.src = "../../../../memoryGameFrontend/src/images/logo.svg";
     logo.className = "logo";
     text.innerHTML = "Enter Username to play";
     loginBtn.innerHTML = "Login";

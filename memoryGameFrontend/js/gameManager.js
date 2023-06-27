@@ -1,4 +1,4 @@
-import { MenuController } from "./controllers/menu/menuController.js";
+import { HomeController } from "./controllers/home/homeController.js";
 import { ScoresController } from "./controllers/scores/scoresController.js";
 import { DifficultyController } from "./controllers/difficulty/difficultyController.js";
 import { ThemesController } from "./controllers/themes/themesController.js";
@@ -11,7 +11,7 @@ export class GameManager {
     this.backButton = document.getElementById("btn-back");
     this.title = document.getElementById("title-navigation");
     let contentContainer = document.getElementById("content-container");
-    this.goTo(1, contentContainer);
+    this.goTo(2, contentContainer);
   }
 
   goTo(controllerId, contentContainer) {
@@ -22,9 +22,9 @@ export class GameManager {
         this.controller = new LoginController(this, contentContainer);
         break;
       case 2:
-        this.title.innerHTML = "Menu";
+        this.title.innerHTML = "HOME";
         this.backButton.classList.add("disable");
-        this.controller = new MenuController(this, contentContainer);
+        this.controller = new HomeController(this, contentContainer);
         break;
       case 3:
         this.title.innerHTML = "Memory Game";
