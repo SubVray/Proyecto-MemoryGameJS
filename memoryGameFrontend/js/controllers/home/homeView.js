@@ -1,4 +1,4 @@
-import { button, createElement, div } from "../../libs/html.js";
+import { button } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class HomeView extends View {

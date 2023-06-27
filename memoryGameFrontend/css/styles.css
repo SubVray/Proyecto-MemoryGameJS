@@ -8,6 +8,10 @@
   padding: 0;
   user-select: none;
 }
+@font-face {
+  font-family: "BIGGER";
+  src: url(../src/font/BIGGER\ SUMMER\ FEST.otf) format("truetype");
+}
 
 :root {
   --light-color: #fff;
@@ -71,9 +75,8 @@
 
 .navigation-container span {
   flex: content;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-left: -5px;
+  font-family: "bigger";
+  font-size: 1.5em;
 }
 
 .btn-navigation {
@@ -94,16 +97,18 @@ button {
   cursor: pointer;
   display: flex;
   flex-direction: column-reverse;
-  font-size: 20px;
-  font-weight: bold;
+  font-family: "bigger";
+  font-size: 2em;
   justify-content: center;
+  letter-spacing: 2px;
   outline: var(--primary-color);
   text-align: center;
   transition: 0.3s ease;
 }
 
 .btn-menu,
-.btn-difficulty {
+.btn-difficulty,
+.btn-login {
   height: 70px;
   padding: 15px 12px;
   transition: 0.3s ease;
@@ -201,10 +206,6 @@ button:is(:focus, :active) {
     padding: 8px 15px;
     width: 100%;
   }
-  .text-login {
-    font-size: 0.6em;
-    text-align: center;
-  }
 }
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -217,12 +218,6 @@ button:is(:focus, :active) {
     max-width: 500px;
     padding: 8px 25px;
     width: 100%;
-  }
-  .text-login {
-    font-size: 1.5rem;
-  }
-  .form-login {
-    width: 65%;
   }
 }
 

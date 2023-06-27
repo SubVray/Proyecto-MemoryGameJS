@@ -1,37 +1,19 @@
+import { div, p } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class ScoresView extends View {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.className = "scores-view";
-
-    let card = document.createElement("div");
-    let cardHeader = document.createElement("div");
-    let cardBody = document.createElement("div");
-    let username = document.createElement("p");
-    let clicks = document.createElement("p");
-    let time = document.createElement("p");
-    let score = document.createElement("p");
-
-    username.innerHTML = "Username";
-    clicks.innerHTML = "Clicks: 30";
-    time.innerHTML = "Time: 50";
-    score.innerHTML = "Score: 50";
-
-    card.className = "card";
-    cardHeader.className = "card-header";
-    cardBody.className = "card-body";
-    username.className = "username";
-    clicks.className = "clicks";
-    time.className = "time";
-    score.className = "score";
-
-    card.appendChild(cardHeader);
-    cardHeader.appendChild(username);
-    cardBody.appendChild(clicks);
-    cardBody.appendChild(time);
-    cardBody.appendChild(score);
-    card.appendChild(cardBody);
-    this.container.appendChild(card);
+    let card = div({ className: "card" }, this.container);
+    let cardHeader = div({ className: "card-header" }, card);
+    let cardBody = div({ className: "card-body" }, card);
+    let username = p(
+      { innerHTML: `Username`, className: "username" },
+      cardHeader
+    );
+    let clicks = p({ innerHTML: "Clicks: 30", className: "clicks" }, cardBody);
+    let time = p({ innerHTML: "Time: 50", className: "time" }, cardBody);
+    let score = p({ innerHTML: "Score: 50", className: "score" }, cardBody);
   }
 }

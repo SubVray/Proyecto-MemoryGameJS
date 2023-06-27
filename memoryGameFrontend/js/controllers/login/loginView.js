@@ -1,3 +1,4 @@
+import { button, p, img, form, input } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class LoginView extends View {
@@ -5,26 +6,32 @@ export class LoginView extends View {
     super(controller, parent);
     this.container.className = "container login-view";
 
-    let logo = document.createElement("img");
-    let form = document.createElement("form");
-    let text = document.createElement("p");
-    let usernameInput = document.createElement("input");
-    let loginBtn = document.createElement("button");
+    let logo = img(
+      {
+        src: "../../../../memoryGameFrontend/src/images/logo.svg",
+        alt: "logo",
+        className: "logo",
+      },
+      this.container
+    );
+    let text = p(
+      {
+        innerHTML: "Enter Username to play",
+        className: "text-login",
+      },
+      this.container
+    );
 
-    form.className = "form-login ";
-    loginBtn.className = "btn-login ";
-    text.className = "text-login";
+    let formLogin = form({ className: "form-login" }, this.container);
 
-    logo.src = "../../../../memoryGameFrontend/src/images/logo.svg";
-    logo.className = "logo";
-    text.innerHTML = "Enter Username to play";
-    loginBtn.innerHTML = "Login";
-    usernameInput.placeholder = "Username";
+    let usernameInput = input(
+      { required: true, placeholder: "Username" },
+      formLogin
+    );
 
-    this.container.appendChild(logo);
-    this.container.appendChild(text);
-    this.container.appendChild(form);
-    form.appendChild(usernameInput);
-    form.appendChild(loginBtn);
+    let loginBtn = button(
+      { innerHTML: "Login", className: "btn-login" },
+      formLogin
+    );
   }
 }
