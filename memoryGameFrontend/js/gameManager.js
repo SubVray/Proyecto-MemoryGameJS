@@ -11,23 +11,25 @@ export class GameManager {
     this.backButton = document.getElementById("btn-back");
     this.title = document.getElementById("title-navigation");
     let contentContainer = document.getElementById("content-container");
-    this.goTo(2, contentContainer);
+    this.goTo(3, contentContainer);
   }
 
   goTo(controllerId, contentContainer) {
     switch (controllerId) {
       case 1:
         this.title.innerHTML = "Login";
+        this.title.className = "title-login";
         this.backButton.classList.add("disable");
         this.controller = new LoginController(this, contentContainer);
         break;
       case 2:
         this.title.innerHTML = "HOME";
+        this.title.className = "title-home";
         this.backButton.classList.add("disable");
         this.controller = new HomeController(this, contentContainer);
         break;
       case 3:
-        this.title.innerHTML = "Memory Game";
+        this.title.innerHTML = "Game";
         this.backButton.classList.remove("disable");
         this.controller = new PlayController(this, contentContainer);
         break;

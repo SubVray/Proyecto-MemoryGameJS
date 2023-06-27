@@ -1,16 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--Victor-Mono-Bold);
   font-size: 16px;
   margin: 0;
   padding: 0;
   user-select: none;
-}
-@font-face {
-  font-family: "BIGGER";
-  src: url(../src/font/BIGGER\ SUMMER\ FEST.otf) format("truetype");
 }
 
 :root {
@@ -22,6 +16,12 @@
   --quaternary-color: #2e3239;
   --disable-color-bg: #324382;
   --disable-color-text: #b3b3b3;
+  --Victor-Mono-Regular: Victor-Mono-Regular;
+  --Victor-Mono-Bold: Victor-Mono-Bold;
+  --Victor-Mono-Italic: Victor-Mono-Italic;
+  --Victor-Mono-BoldItalic: Victor-Mono-BoldItalic;
+  --Victor-Mono-Oblique: Victor-Mono-Oblique;
+  --Victor-Mono-BoldOblique: Victor-Mono-BoldOblique;
 }
 
 .disable {
@@ -68,15 +68,23 @@
   display: flex;
   height: 50px;
   justify-content: space-between;
-  padding: 8px;
+  padding: 12px;
   text-align: center;
   width: 100%;
 }
 
 .navigation-container span {
   flex: content;
-  font-family: "bigger";
-  font-size: 1.5em;
+  font-family: var(--Victor-Mono-Bold);
+  font-size: 2.2em;
+  margin-left: -20px;
+}
+
+span.title-login {
+  margin-left: 0;
+}
+span.title-home {
+  margin-left: 0;
 }
 
 .btn-navigation {
@@ -86,6 +94,7 @@
   height: 35px;
   justify-content: center;
   width: 35px;
+  z-index: 1;
 }
 
 button {
@@ -97,22 +106,25 @@ button {
   cursor: pointer;
   display: flex;
   flex-direction: column-reverse;
-  font-family: "bigger";
-  font-size: 2em;
+  font-size: 1.6em;
+  font-weight: 400;
   justify-content: center;
   letter-spacing: 2px;
+  max-width: 233px;
   outline: var(--primary-color);
   text-align: center;
   transition: 0.3s ease;
+  width: 100%;
 }
 
 .btn-menu,
 .btn-difficulty,
-.btn-login {
-  height: 70px;
-  padding: 15px 12px;
+.btn-login,
+.btn-theme {
+  height: 65px;
+  padding: 12px;
   transition: 0.3s ease;
-  width: 280px;
+  width: 100%;
 }
 
 button:is(:hover) {
@@ -133,106 +145,55 @@ button:is(:focus, :active) {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding: 8px;
+  padding: 12px;
   width: 100%;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
 }
 
 .created-by {
   bottom: 12px;
-  color: rgb(255, 255, 255, 37%);
-  font-size: 1em;
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--Victor-Mono-BoldItalic);
+  font-size: 0.8em;
   position: absolute;
+  text-align: center;
 }
 
 /* 8 cards 
-.card {
-	align-items: center;
-	background-color: #fff;
-	border-radius: 8px;
-	display: flex;
-	height: 8em;
-	justify-content: center;
-	width: 8em;
-}
 */
+.card-8 {
+  background-color: #fff;
+  background-image: url(../src/images/help-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  height: 7em;
+  width: 7em;
+}
 
 /* 16 cards 
-.card {
-	align-items: center;
-	background-color: #fff;
+
+*/
+.card-16 {
+  background-color: #fff;
+  background-image: url(../src/images/help-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 8px;
-  display: flex;
-  height: 5.5em;
-  justify-content: center;
-  width: 5.5em;
+  height: 5em;
+  width: 5em;
 }
-*/
+
 /* 24 cards 
-.card {
-	align-items: center;
-	background-color: #fff;
-	border-radius: 8px;
-	display: flex;
-	height: 4.5em;
-	justify-content: center;
-	width: 4.5em;
-}
 */
-
-.card svg {
-  height: 50px;
-  stroke: #a2b2ee;
-  width: 50px;
-}
-
-/* // Small devices (landscape phones, 576px and up) */
-@media (max-width: 376px) {
-  .navigation-container,
-  .content-container {
-    max-width: 1000px;
-    width: 100%;
-  }
-
-  .container {
-    max-width: 500px;
-    padding: 8px 15px;
-    width: 100%;
-  }
-}
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .navigation-container,
-  .content-container {
-    max-width: 1000px;
-    width: 100%;
-  }
-  .container {
-    max-width: 500px;
-    padding: 8px 25px;
-    width: 100%;
-  }
-}
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+.card-24 {
+  background-color: #fff;
+  background-image: url(../src/images/help-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  height: 4em;
+  width: 4em;
 }

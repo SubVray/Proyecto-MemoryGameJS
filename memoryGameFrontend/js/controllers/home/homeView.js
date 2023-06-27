@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "container menu-view";
+    this.container.className = "container home-view";
 
     let loginBtn = button(
       { innerHTML: "Login", className: "btn-menu login-button" },

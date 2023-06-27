@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Victor-Mono-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../src/fonts/VictorMono-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Victor-Mono-BoldItalic";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../src/fonts/VictorMono-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Victor-Mono-BoldOblique";
+  font-style: oblique;
+  font-weight: bold;
+  src: url("../src/fonts/VictorMono-BoldOblique.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Victor-Mono-Oblique";
+  font-style: oblique;
+  font-weight: normal;
+  src: url("../src/fonts/VictorMono-Oblique.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Victor-Mono-Italic";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../src/fonts/VictorMono-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Victor-Mono-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../src/fonts/VictorMono-Regular.ttf") format("truetype");
+}
