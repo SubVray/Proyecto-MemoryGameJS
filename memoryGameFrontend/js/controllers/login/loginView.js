@@ -21,14 +21,11 @@ export class LoginView extends View {
       },
       this.container
     );
-
     let formLogin = form({ className: "form-login" }, this.container);
-
     let usernameInput = input(
-      { required: true, placeholder: "Username" },
+      { required: true, placeholder: "Username", type: "button" },
       formLogin
     );
-
     let loginBtn = button(
       { innerHTML: "Login", className: "btn-login" },
       formLogin

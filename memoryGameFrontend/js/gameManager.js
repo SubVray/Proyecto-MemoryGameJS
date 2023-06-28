@@ -11,7 +11,7 @@ export class GameManager {
     this.backButton = document.getElementById("btn-back");
     this.title = document.getElementById("title-navigation");
     let contentContainer = document.getElementById("content-container");
-    this.goTo(3, contentContainer);
+    this.goTo(5, contentContainer);
   }
 
   goTo(controllerId, contentContainer) {
