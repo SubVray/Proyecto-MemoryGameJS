@@ -23,8 +23,11 @@
   --Victor-Mono-Oblique: Victor-Mono-Oblique;
   --Victor-Mono-BoldOblique: Victor-Mono-BoldOblique;
 }
+.bg {
+  background-color: var(--quaternary-color);
+}
 
-.disable {
+.hidden {
   display: none !important;
 }
 .disable-btn {
@@ -55,6 +58,7 @@
   gap: 8px;
   height: 100vh;
   justify-content: center;
+  overflow: hidden;
   padding: 12px;
   width: 100%;
 }

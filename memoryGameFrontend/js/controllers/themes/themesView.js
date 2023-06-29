@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class ThemesView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "container themes-view";
+    this.container.className = "bg container themes-view";
 
     let foodBtn = button(
       { innerHTML: "🍓 Food 🍓", className: "btn-theme" },

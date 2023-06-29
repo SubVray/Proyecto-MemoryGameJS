@@ -6,4 +6,7 @@ export class HomeController extends Controller {
     super(gameManager);
     this.view = new HomeView(this, parent);
   }
+  goTo(state) {
+    this.gameManager.goTo(state);
+  }
 }

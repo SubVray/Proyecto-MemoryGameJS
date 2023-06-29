@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class PlayView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "play-view";
+    this.container.className = "bg play-view";
     let gh = [1, 1, 1, 1, 1, 1, 1, 1];
     gh.forEach((element) => {
       if (gh.length === 24) {

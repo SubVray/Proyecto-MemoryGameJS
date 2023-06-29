@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class LoginView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "container login-view";
+    this.container.className = "bg container login-view";
 
     let logo = img(
       {
@@ -23,12 +23,14 @@ export class LoginView extends View {
     );
     let formLogin = form({ className: "form-login" }, this.container);
     let usernameInput = input(
-      { required: true, placeholder: "Username", type: "button" },
+      { required: true, placeholder: "Username" },
       formLogin
     );
     let loginBtn = button(
-      { innerHTML: "Login", className: "btn-login" },
+      { innerHTML: "Login", className: "btn-login", type: "button" },
       formLogin
     );
+
+    
   }
 }

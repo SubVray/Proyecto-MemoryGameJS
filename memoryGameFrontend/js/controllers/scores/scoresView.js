@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class ScoresView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "scores-view";
+    this.container.className = "bg scores-view";
     let card = div({ className: "card" }, this.container);
     let cardHeader = div({ className: "card-header" }, card);
     let cardBody = div({ className: "card-body" }, card);

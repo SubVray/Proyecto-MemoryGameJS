@@ -5,4 +5,11 @@ export class Controller {
     this.service = null;
     this.model = null;
   }
+
+  delete() {
+    this.view.delete();
+  }
+  hide(callBack) {
+    this.view.hide(callBack);
+  }
 }
