@@ -23,7 +23,6 @@ export class GameManager {
     this.backButton = document.getElementById("btn-back");
     this.title = document.getElementById("title-navigation");
     this.presenting(HOME_STATE);
-
     this.backButton.addEventListener("click", this.goTo.bind(this, HOME_STATE));
   }
 
@@ -37,25 +36,22 @@ export class GameManager {
       case LOGIN_STATE:
         this.title.innerHTML = "Login";
         this.title.className = "title-l ";
-        this.controller = new LoginController(this, this.contentContainer);
+        this.controller = new LoginController(this, this.contentContainer); // this es el GameManager
         break;
       case HOME_STATE:
         this.title.innerHTML = "HOME";
         this.title.className = "title-home";
         this.backButton.classList.add("hidden");
         this.controller = new HomeController(this, this.contentContainer);
-
         break;
       case PLAY_STATE:
         this.title.innerHTML = "Game";
         this.title.className = "title-l ";
-
         this.controller = new PlayController(this, this.contentContainer);
         break;
       case SCORES_STATE:
         this.title.innerHTML = "Scores";
         this.title.className = "title-l ";
-
         this.controller = new ScoresController(this, this.contentContainer);
         break;
       case DIFFICULTY_STATE:
@@ -72,7 +68,6 @@ export class GameManager {
       case CREDITS_STATE:
         this.title.innerHTML = "Credits";
         this.title.className = "title-l ";
-
         this.controller = new CreditsController(this, this.contentContainer);
         break;
     }

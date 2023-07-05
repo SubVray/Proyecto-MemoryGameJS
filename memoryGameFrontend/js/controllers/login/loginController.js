@@ -6,4 +6,6 @@ export class LoginController extends Controller {
     super(gameManager);
     this.view = new LoginView(this, parent);
   }
+
+  
 }

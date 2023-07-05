@@ -52,6 +52,7 @@ body {
     #7088e0,
     #5f7adb
   );
+  color: var(--light-color);
   height: 100vh;
   overflow: auto;
 }
@@ -106,6 +107,7 @@ body {
   flex-direction: column;
   height: 92%;
   justify-content: center;
+  overflow: hidden;
 }
 .navigation-container {
   align-items: center;
@@ -145,8 +147,9 @@ button {
   letter-spacing: 2px;
   max-width: 233px;
   outline: var(--primary-color);
+  scale: 1;
   text-align: center;
-  transition: 0.3s ease;
+  transition: 0.3s;
   width: 100%;
 }
 .btn-menu,
@@ -154,17 +157,21 @@ button {
 .btn-login,
 .btn-theme {
   padding: 12px;
-  transition: 0.3s ease;
+  transition: 0.3s;
   width: 100%;
 }
 button:is(:hover) {
+  background-color: transparent;
   border: 1px solid var(--secondary-color);
   box-shadow: 0 0 2px 2px var(--secondary-color);
+  scale: 1.05;
 }
 button:is(:focus, :active) {
   border: 1px solid var(--secondary-color);
   box-shadow: 0 0 2px 3px var(--secondary-color);
+  scale: 1.05;
 }
+
 .created-by {
   color: rgba(255, 255, 255, 0.637);
   font-family: var(--Victor-Mono-BoldItalic);
