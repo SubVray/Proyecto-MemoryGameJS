@@ -14,13 +14,14 @@ export class View {
   }
 
   show() {
-    gsap.to(this.container, { x: 0, duration: 1, ease: "none" });
+    gsap.to(this.container, { x: 0, duration: 0.5, ease: "none" });
   }
+  
   hide(callback, state) {
     this.callback = callback;
     gsap.to(this.container, {
       x: window.innerWidth,
-      duration: 1,
+      duration: 0.5,
       onComplete: this.hideComplete.bind(this, state),
     });
   }

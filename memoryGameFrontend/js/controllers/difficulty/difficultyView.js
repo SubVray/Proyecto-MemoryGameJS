@@ -1,11 +1,11 @@
-import { button, createElement, span } from "../../libs/html.js";
+import { button, span } from "../../libs/html.js";
 
 import { View } from "../view.js";
 
 export class DifficultyView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "container difficulty-view";
+    this.container.className = "bg container difficulty-view";
 
     let easyBtn = button(
       { innerHTML: "Easy", className: "btn-difficulty" },

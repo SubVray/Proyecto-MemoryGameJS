@@ -58,7 +58,7 @@ export class HomeView extends View {
     let creditsBtn = button(
       {
         innerHTML: "Credits",
-        className: "disable-btn btn-menu play-button",
+        className: " btn-menu play-button",
         onclick: this.onButtonClick.bind(this, CREDITS_STATE),
       },
       this.container

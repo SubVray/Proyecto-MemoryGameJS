@@ -5,6 +5,7 @@ import { ThemesController } from "./controllers/themes/themesController.js";
 import { PlayController } from "./controllers/play/playController.js";
 import { LoginController } from "./controllers/login/loginController.js";
 import {
+  CREDITS_STATE,
   DIFFICULTY_STATE,
   HOME_STATE,
   LOGIN_STATE,
@@ -12,6 +13,7 @@ import {
   SCORES_STATE,
   THEMES_STATE,
 } from "./libs/constants.js";
+import { CreditsController } from "./controllers/credits/creditsController.js";
 
 export class GameManager {
   constructor() {
@@ -35,7 +37,7 @@ export class GameManager {
     switch (state) {
       case LOGIN_STATE:
         this.title.innerHTML = "Login";
-        this.title.className = "title-login";
+        this.title.className = "title-l ";
         this.controller = new LoginController(this, this.contentContainer);
         break;
       case HOME_STATE:
@@ -45,19 +47,32 @@ export class GameManager {
         break;
       case PLAY_STATE:
         this.title.innerHTML = "Game";
+        this.title.className = "title-l ";
+
         this.controller = new PlayController(this, this.contentContainer);
         break;
       case SCORES_STATE:
         this.title.innerHTML = "Scores";
+        this.title.className = "title-l ";
+
         this.controller = new ScoresController(this, this.contentContainer);
         break;
       case DIFFICULTY_STATE:
         this.title.innerHTML = "Difficulty";
+        this.title.className = "title-l title-difficulty ";
+
         this.controller = new DifficultyController(this, this.contentContainer);
         break;
       case THEMES_STATE:
         this.title.innerHTML = "Themes";
+        this.title.className = "title-l ";
         this.controller = new ThemesController(this, this.contentContainer);
+        break;
+      case CREDITS_STATE:
+        this.title.innerHTML = "Credits";
+        this.title.className = "title-l ";
+
+        this.controller = new CreditsController(this, this.contentContainer);
         break;
     }
   }

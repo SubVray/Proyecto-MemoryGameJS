@@ -6,13 +6,14 @@ export class PlayView extends View {
     super(controller, parent);
     this.container.className = "bg play-view";
     let gh = [1, 1, 1, 1, 1, 1, 1, 1];
+    let container = div({ className: "container" }, this.container);
     gh.forEach((element) => {
       if (gh.length === 24) {
-        let cardGame = div({ className: "card-24" }, this.container);
+        let cardGame = div({ className: "card-24" }, container);
       } else if (gh.length === 16) {
-        let cardGame = div({ className: "card-16" }, this.container);
+        let cardGame = div({ className: "card-16" }, container);
       } else {
-        let cardGame = div({ className: "card-8" }, this.container);
+        let cardGame = div({ className: "card-8" }, container);
       }
     });
   }
