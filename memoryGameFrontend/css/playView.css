@@ -1,6 +1,5 @@
 .play-view {
   align-items: center;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -39,6 +38,6 @@ button.btn-reset {
 .data {
   color: rgb(182, 182, 182);
 }
-.clicks,
+/* .clicks,
 .time {
-}
+} */
