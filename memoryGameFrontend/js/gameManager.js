@@ -24,6 +24,12 @@ export class GameManager {
     this.title = document.getElementById("title-navigation");
     this.presenting(HOME_STATE);
     this.backButton.addEventListener("click", this.goTo.bind(this, HOME_STATE));
+    this.contentContainer.addEventListener("home-button-click", (event) => {
+      this.presenting(event.detail.state);
+    });
+    this.contentContainer.addEventListener("hide-complete", (event) => {
+      this.presenting(event.detail.state);
+    });
   }
 
   presenting(state) {
@@ -39,7 +45,7 @@ export class GameManager {
         this.controller = new LoginController(this, this.contentContainer); // this es el GameManager
         break;
       case HOME_STATE:
-        this.title.innerHTML = "HOME";
+        this.title.innerHTML = "Home";
         this.title.className = "title-home";
         this.backButton.classList.add("hidden");
         this.controller = new HomeController(this, this.contentContainer);
@@ -75,7 +81,7 @@ export class GameManager {
 
   goTo(state) {
     if (this.controller !== null) {
-      this.controller.hide(this.presenting.bind(this, state));
+      this.controller.hide(state);
     } else {
       this.presenting(state);
     }

@@ -6,7 +6,7 @@ export class View {
     this.parent = parent;
     this.container = div({}, this.parent);
     this.container.style.transform = `translateX(${window.innerWidth}px)`;
-    this.callback = null;
+
     this.show();
   }
   delete() {
@@ -17,8 +17,7 @@ export class View {
     gsap.to(this.container, { x: 0, duration: 0.5, ease: "none" });
   }
 
-  hide(callback, state) {
-    this.callback = callback;
+  hide(state) {
     gsap.to(this.container, {
       x: window.innerWidth,
       duration: 0.5,
@@ -27,6 +26,14 @@ export class View {
   }
 
   hideComplete(state) {
-    this.callback(state);
+    let customEvent = new CustomEvent("hide-complete", {
+      detail: {
+        state: state,
+      },
+      bubbles: true,
+      cancelable: true,
+      composed: false,
+    });
+    this.container.dispatchEvent(customEvent);
   }
 }

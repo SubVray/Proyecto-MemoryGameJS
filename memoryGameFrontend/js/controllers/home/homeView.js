@@ -64,9 +64,18 @@ export class HomeView extends View {
       this.container
     );
   }
+
   onButtonClick(state, event) {
     if (!event.target.classList.contains("disable-btn")) {
-      this.controller.goTo(state);
+      let customEvent = new CustomEvent("home-button-click", {
+        detail: {
+          state: state,
+        },
+        bubbles: true,
+        cancelable: true,
+        composed: false,
+      });
+      this.container.dispatchEvent(customEvent);
     }
   }
 }
