@@ -211,24 +211,3 @@ button:is(:focus, :active) {
   height: 4em;
   width: 4em;
 }
-
-/*
-.bg {
-  background-color: var(--quaternary-color);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- */

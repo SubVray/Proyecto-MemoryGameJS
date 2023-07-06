@@ -30,8 +30,7 @@ input:is(:focus) {
 }
 
 .logo {
-  margin-top: -100px;
-  max-width: 250px;
+  max-width: 550px;
   min-width: 80px;
   width: 100%;
 }

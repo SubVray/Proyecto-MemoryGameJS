@@ -40,39 +40,39 @@ export class GameManager {
     this.backButton.classList.remove("hidden");
     switch (state) {
       case LOGIN_STATE:
-        this.title.innerHTML = "Login";
+        this.title.innerHTML = "LOGIN";
         this.title.className = "title-l ";
         this.controller = new LoginController(this, this.contentContainer); // this es el GameManager
         break;
       case HOME_STATE:
-        this.title.innerHTML = "Home";
+        this.title.innerHTML = "HOME";
         this.title.className = "title-home";
         this.backButton.classList.add("hidden");
         this.controller = new HomeController(this, this.contentContainer);
         break;
       case PLAY_STATE:
-        this.title.innerHTML = "Game";
+        this.title.innerHTML = "GAME";
         this.title.className = "title-l ";
         this.controller = new PlayController(this, this.contentContainer);
         break;
       case SCORES_STATE:
-        this.title.innerHTML = "Scores";
+        this.title.innerHTML = "SCORES";
         this.title.className = "title-l ";
         this.controller = new ScoresController(this, this.contentContainer);
         break;
       case DIFFICULTY_STATE:
-        this.title.innerHTML = "Difficulty";
+        this.title.innerHTML = "DIFFICULTY";
         this.title.className = "title-l title-difficulty ";
 
         this.controller = new DifficultyController(this, this.contentContainer);
         break;
       case THEMES_STATE:
-        this.title.innerHTML = "Themes";
+        this.title.innerHTML = "THEMES";
         this.title.className = "title-l ";
         this.controller = new ThemesController(this, this.contentContainer);
         break;
       case CREDITS_STATE:
-        this.title.innerHTML = "Credits";
+        this.title.innerHTML = "CREDITS";
         this.title.className = "title-l ";
         this.controller = new CreditsController(this, this.contentContainer);
         break;

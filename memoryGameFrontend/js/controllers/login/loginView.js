@@ -8,7 +8,7 @@ export class LoginView extends View {
 
     let logo = img(
       {
-        src: "src/images/logo.svg",
+        src: "src/images/logom.png",
         alt: "logo",
         className: "logo",
       },
