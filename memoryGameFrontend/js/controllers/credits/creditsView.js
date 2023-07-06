@@ -15,5 +15,9 @@ export class CreditsView extends View {
       },
       logoContainer
     );
+    let CREATOR = div(
+      { innerHTML: "Jim Bolaños", className: "" },
+      this.container
+    );
   }
 }
