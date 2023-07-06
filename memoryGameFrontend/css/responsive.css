@@ -3,20 +3,35 @@
 }
 /* // Small devices (landscape phones, 576px and less) */
 @media (min-width: 576px) {
+  .main-container {
+    padding: 0 100px !important;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .main-container {
+    padding: 0 150px !important;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .main-container {
+    padding: 0 200px !important;
+  }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .main-container {
+    padding: 0 200px !important;
+  }
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+  .content-container {
+    padding: 0 200px;
+  }
 }
