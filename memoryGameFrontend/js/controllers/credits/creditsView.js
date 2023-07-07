@@ -1,4 +1,4 @@
-import { div, img } from "../../libs/html.js";
+import { div, img, a } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class CreditsView extends View {
@@ -15,8 +15,13 @@ export class CreditsView extends View {
       },
       logoContainer
     );
-    let CREATOR = div(
-      { innerHTML: "Jim Bolaños", className: "" },
+    let CREATOR = a(
+      {
+        innerHTML: "Jim Bolaños",
+        href: "https://github.com/SubVray",
+        className: "link",
+        target: "_blank",
+      },
       this.container
     );
   }

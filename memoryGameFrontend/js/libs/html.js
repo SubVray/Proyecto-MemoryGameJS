@@ -19,6 +19,9 @@ export const form = (attributes, parent) => {
 export const input = (attributes, parent) => {
   return createElement("input", attributes, parent);
 };
+export const a = (attributes, parent) => {
+  return createElement("a", attributes, parent);
+};
 
 export const createElement = (type, attributes, parent) => {
   let element = document.createElement(type);

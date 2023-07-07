@@ -23,7 +23,7 @@ export class GameManager {
     this.$gameNav = document.getElementById("game-nav");
     this.$backButton = document.getElementById("btn-back");
     this.$title = document.getElementById("title-navigation");
-    this.presenting(CREDITS_STATE);
+    this.presenting(HOME_STATE);
     this.$backButton.addEventListener(
       "click",
       this.goTo.bind(this, HOME_STATE)

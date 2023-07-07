@@ -160,16 +160,19 @@ button {
   transition: 0.3s;
   width: 100%;
 }
-button:is(:hover) {
+button:is(:hover, :focus, :active) {
   background-color: transparent;
+  background-image: url("../src/images/bg-btn.gif");
   border: 1px solid var(--secondary-color);
   box-shadow: 0 0 2px 2px var(--secondary-color);
 }
-button:is(:focus, :active) {
-  border: 1px solid var(--secondary-color);
-  box-shadow: 0 0 2px 3px var(--secondary-color);
-}
 
+.link {
+  color: var(--light-color);
+  font-family: var(--Victor-Mono-BoldItalic);
+  font-size: 1em;
+  text-decoration: none;
+}
 .created-by {
   color: rgba(255, 255, 255, 0.637);
   font-family: var(--Victor-Mono-BoldItalic);
@@ -178,6 +181,10 @@ button:is(:focus, :active) {
   margin-top: -30px;
   padding: 0;
   text-align: center;
+}
+.created-by .link {
+  color: rgba(255, 255, 255, 0.637);
+  font-family: var(--Victor-Mono-BoldItalic);
 }
 .card-8 {
   background-color: #fff;
