@@ -12,7 +12,7 @@ import { View } from "../view.js";
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = " container home-view";
+    this.container.className = "home-view";
 
     let loginBtn = button(
       {

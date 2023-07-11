@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class LoginView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "bg container login-view";
+    this.container.className = "bg  login-view";
 
     let logo = img(
       {

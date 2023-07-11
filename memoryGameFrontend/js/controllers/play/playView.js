@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class PlayView extends View {
   constructor(controller, parent, gameNav) {
     super(controller, parent);
-    this.container.className = "play-view";
+    this.container.className = "bg play-view";
     gameNav.innerHTML = "";
     let gh = [1, 1, 1, 1, 1, 1, 1, 1];
     let container = div({ className: "container" }, this.container);

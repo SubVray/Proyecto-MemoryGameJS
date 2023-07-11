@@ -4,7 +4,7 @@ import { View } from "../view.js";
 export class CreditsView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "bg container themes-view";
+    this.container.className = "bg  themes-view";
 
     let logoContainer = div({ className: "" }, this.container);
     let logo = img(

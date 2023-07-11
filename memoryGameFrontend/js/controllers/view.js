@@ -5,6 +5,10 @@ export class View {
     this.controller = controller;
     this.parent = parent;
     this.container = div({}, this.parent);
+    // this.fadeContainer = div(
+    //   { className: "view-fade-container" },
+    //   this.container
+    // );
     this.container.style.transform = `translateX(${window.innerWidth}px)`;
 
     this.show();

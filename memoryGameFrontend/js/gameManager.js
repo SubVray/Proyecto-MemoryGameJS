@@ -23,11 +23,12 @@ export class GameManager {
     this.$gameNav = document.getElementById("game-nav");
     this.$backButton = document.getElementById("btn-back");
     this.$title = document.getElementById("title-navigation");
-    this.presenting(HOME_STATE);
     this.$backButton.addEventListener(
       "click",
       this.goTo.bind(this, HOME_STATE)
     );
+    this.homeController = new HomeController(this, this.$contentContainer);
+    this.presenting(HOME_STATE);
     this.$contentContainer.addEventListener("home-button-click", (event) => {
       this.presenting(event.detail.state);
     });
@@ -53,7 +54,6 @@ export class GameManager {
         this.$title.innerHTML = "HOME";
         this.$title.className = "title-home";
         this.$backButton.classList.add("hidden");
-        this.controller = new HomeController(this, this.$contentContainer);
         break;
       case PLAY_STATE:
         this.$title.innerHTML = "GAME";
