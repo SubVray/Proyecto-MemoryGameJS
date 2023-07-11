@@ -1,11 +1,16 @@
 .difficulty-view {
   align-items: center;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 93.5%;
+  height: 100%;
   justify-content: center;
+  left: 0;
   padding: 12px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
 }
 

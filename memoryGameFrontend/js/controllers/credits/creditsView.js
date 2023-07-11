@@ -4,9 +4,10 @@ import { View } from "../view.js";
 export class CreditsView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "bg  themes-view";
+    this.container.id = "themes-view";
+    this.elementsContainer.className = "bg  themes-view";
 
-    let logoContainer = div({ className: "" }, this.container);
+    let logoContainer = div({ className: "" }, this.elementsContainer);
     let logo = img(
       {
         src: "src/images/memory-game.png",
@@ -22,7 +23,7 @@ export class CreditsView extends View {
         className: "link",
         target: "_blank",
       },
-      this.container
+      this.elementsContainer
     );
   }
 }

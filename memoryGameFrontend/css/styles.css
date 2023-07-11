@@ -19,6 +19,7 @@
   --quaternary-color: #2e3239;
   --disable-color-bg: #324382;
   --disable-color-text: #b3b3b3;
+  --fade-color: rgb(0, 0, 0, 1);
   --Victor-Mono-Regular: Victor-Mono-Regular;
   --Victor-Mono-Bold: Victor-Mono-Bold;
   --Victor-Mono-Italic: Victor-Mono-Italic;
@@ -44,6 +45,7 @@
 }
 
 body {
+  align-items: center;
   background-image: linear-gradient(
     to right bottom,
     #a2b2ee,
@@ -53,17 +55,23 @@ body {
     #5f7adb
   );
   color: var(--light-color);
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: center;
   overflow: auto;
+  position: relative;
+  width: 100vw;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   padding: 4px 8px 8px 8px;
+  width: 100vw;
 }
 .navigation-container {
   align-items: center;
@@ -77,6 +85,7 @@ body {
   padding: 12px;
   text-align: center;
   width: 100%;
+  z-index: 99;
 }
 .navigation-container span {
   flex: content;
@@ -97,7 +106,7 @@ body {
   height: 35px;
   justify-content: center;
   width: 35px;
-  z-index: 1;
+  z-index: 999;
 }
 .content-container {
   align-items: center;
@@ -105,9 +114,11 @@ body {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  height: 94%;
+  height: 100%;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 .navigation-container {
   align-items: center;
@@ -181,40 +192,11 @@ button:is(:hover, :focus, :active) {
   margin-top: -30px;
   padding: 0;
   text-align: center;
+  z-index: 999;
 }
 .created-by .link {
   color: rgba(255, 255, 255, 0.637);
   font-family: var(--Victor-Mono-BoldItalic);
-}
-.card-8 {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 7em;
-  width: 7em;
-}
-.card-16 {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 5em;
-  width: 5em;
-}
-.card-24 {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 4em;
-  width: 4em;
 }
 
 .bg {

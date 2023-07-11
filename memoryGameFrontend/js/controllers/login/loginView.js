@@ -4,7 +4,8 @@ import { View } from "../view.js";
 export class LoginView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "bg  login-view";
+    this.container.id = "login-view";
+    this.elementsContainer.className = "bg login-view";
 
     let logo = img(
       {
@@ -12,16 +13,16 @@ export class LoginView extends View {
         alt: "logo",
         className: "logo",
       },
-      this.container
+      this.elementsContainer
     );
     let text = p(
       {
         innerHTML: "Enter Username to play",
         className: "text-login",
       },
-      this.container
+      this.elementsContainer
     );
-    let formLogin = form({ className: "form-login" }, this.container);
+    let formLogin = form({ className: "form-login" }, this.elementsContainer);
     let usernameInput = input(
       { required: true, placeholder: "Username" },
       formLogin
@@ -30,7 +31,5 @@ export class LoginView extends View {
       { innerHTML: "Login", className: "btn-login", type: "button" },
       formLogin
     );
-
-    
   }
 }

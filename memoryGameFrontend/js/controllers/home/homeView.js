@@ -12,7 +12,8 @@ import { View } from "../view.js";
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "home-view";
+    this.container.id = "home-view";
+    this.elementsContainer.className = "bg home-view";
 
     let loginBtn = button(
       {
@@ -20,7 +21,7 @@ export class HomeView extends View {
         className: "btn-menu login-button",
         onclick: this.onButtonClick.bind(this, LOGIN_STATE),
       },
-      this.container
+      this.elementsContainer
     );
     let playBtn = button(
       {
@@ -28,7 +29,7 @@ export class HomeView extends View {
         className: " btn-menu play-button",
         onclick: this.onButtonClick.bind(this, PLAY_STATE),
       },
-      this.container
+      this.elementsContainer
     );
     let scoreBtn = button(
       {
@@ -36,7 +37,7 @@ export class HomeView extends View {
         className: " btn-menu play-button",
         onclick: this.onButtonClick.bind(this, SCORES_STATE),
       },
-      this.container
+      this.elementsContainer
     );
     let difficultyBtn = button(
       {
@@ -44,7 +45,7 @@ export class HomeView extends View {
         className: " btn-menu play-button",
         onclick: this.onButtonClick.bind(this, DIFFICULTY_STATE),
       },
-      this.container
+      this.elementsContainer
     );
     let themesBtn = button(
       {
@@ -53,7 +54,7 @@ export class HomeView extends View {
         onclick: this.onButtonClick.bind(this, THEMES_STATE),
       },
 
-      this.container
+      this.elementsContainer
     );
     let creditsBtn = button(
       {
@@ -61,7 +62,7 @@ export class HomeView extends View {
         className: " btn-menu play-button",
         onclick: this.onButtonClick.bind(this, CREDITS_STATE),
       },
-      this.container
+      this.elementsContainer
     );
   }
 

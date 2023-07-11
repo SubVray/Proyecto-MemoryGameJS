@@ -4,8 +4,12 @@ import { View } from "../view.js";
 export class ScoresView extends View {
   constructor(controller, parent) {
     super(controller, parent);
-    this.container.className = "bg scores-view";
-    let cardContainer = div({ className: "card-container" }, this.container);
+    this.container.id = " scores-view";
+    this.elementsContainer.className = "bg scores-view";
+    let cardContainer = div(
+      { className: "card-container" },
+      this.elementsContainer
+    );
 
     let gh = [1, 1, 1, 1, 1, 1];
     gh.forEach((element) => {

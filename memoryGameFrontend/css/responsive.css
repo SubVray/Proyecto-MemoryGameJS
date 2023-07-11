@@ -1,37 +1,120 @@
 /* // Small devices (landscape phones, 576px and up) */
-@media (max-width: 575px) {
+@media (max-width: 375px) {
+  .container {
+    gap: 8px;
+  }
+  .card-8 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 5em;
+    width: 5em;
+  }
+  .card-12 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 4em;
+    width: 4em;
+  }
+  .card-16 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 3.5em;
+    width: 3.5em;
+  }
+  .icon-8 {
+    font-size: 2.5em;
+  }
+  .icon-12 {
+    font-size: 2.2em;
+  }
+  .icon-16 {
+    font-size: 2em;
+  }
+}
+/* // Small devices (landscape phones, 576px and less) */
+@media (min-width: 376px) {
+  .container {
+    gap: 12px;
+  }
+  .card-8 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 5em;
+    width: 5em;
+  }
+  .card-12 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    height: 5em;
+    width: 5em;
+  }
+  .card-16 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 3.8em;
+    width: 3.8em;
+  }
+  .icon-8 {
+    font-size: 2.5em;
+  }
+  .icon-12 {
+    font-size: 2.5em;
+  }
+  .icon-16 {
+    font-size: 2.5em;
+  }
 }
 /* // Small devices (landscape phones, 576px and less) */
 @media (min-width: 576px) {
-  body {
-    padding: 0 100px !important;
+  .main-container {
+    max-width: 650px;
+    width: 100%;
+  }
+  .container {
+    gap: 12px;
+    width: 400px;
+  }
+  .card-8 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 5em;
+    width: 5em;
+  }
+  .card-12 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 5em;
+    width: 5em;
+  }
+  .card-16 {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 4em;
+    width: 4em;
+  }
+  .icon-8 {
+    font-size: 2.5em;
+  }
+  .icon-12 {
+    font-size: 1.5em;
+  }
+  .icon-16 {
+    font-size: 1.5em;
   }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  body {
-    padding: 0 150px !important;
-  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  body {
-    padding: 0 200px !important;
-  }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  body {
-    padding: 0 200px !important;
-  }
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-  body {
-    padding: 0 200px;
-  }
 }

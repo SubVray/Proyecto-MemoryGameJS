@@ -5,11 +5,15 @@ export class View {
     this.controller = controller;
     this.parent = parent;
     this.container = div({}, this.parent);
-    // this.fadeContainer = div(
-    //   { className: "view-fade-container" },
-    //   this.container
-    // );
-    this.container.style.transform = `translateX(${window.innerWidth}px)`;
+    this.fadeContainer = div(
+      { className: "view-fade-container" },
+      this.container
+    );
+    this.elementsContainer = div(
+      { className: "view-elementsContainer" },
+      this.container
+    );
+    this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)`;
 
     this.show();
   }
@@ -18,14 +22,25 @@ export class View {
   }
 
   show() {
-    gsap.to(this.container, { x: 0, duration: 0.5, ease: "none" });
+    gsap.to(this.fadeContainer, {
+      opacity: 0.75,
+      duration: 0.55,
+      ease: "expo.out",
+    });
+    gsap.to(this.elementsContainer, { x: 0, duration: 0.85, ease: "expo.out" });
   }
 
   hide(state) {
-    gsap.to(this.container, {
+    gsap.to(this.fadeContainer, {
+      opacity: 0,
+      duration: 0.75,
+      ease: "expo.in",
+      onComplete: this.hideComplete.bind(this, state),
+    });
+    gsap.to(this.elementsContainer, {
       x: window.innerWidth,
       duration: 0.5,
-      onComplete: this.hideComplete.bind(this, state),
+      ease: "expo.in",
     });
   }
 

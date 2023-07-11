@@ -1,14 +1,17 @@
-import { div, p, button } from "../../libs/html.js";
+import { div, p, button, span } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class PlayView extends View {
   constructor(controller, parent, gameNav) {
     super(controller, parent);
-    this.container.className = "bg play-view";
-    gameNav.innerHTML = "";
-    let gh = [1, 1, 1, 1, 1, 1, 1, 1];
-    let container = div({ className: "container" }, this.container);
+    this.container.id = " play-view";
+    this.elementsContainer.className = "bg play-view";
+    this.cardContainer = div(
+      { className: "container" },
+      this.elementsContainer
+    );
 
+    gameNav.innerHTML = "";
     let gameNavContainer1 = div({ className: "game-nav-container1" }, gameNav);
     let gameNavContainer2 = div({ className: "game-nav-container2" }, gameNav);
     let clicks = p(
@@ -26,14 +29,37 @@ export class PlayView extends View {
       { innerHTML: "Reset", className: "btn-reset", type: "button" },
       gameNavContainer2
     );
-
-    gh.forEach((element) => {
-      if (gh.length === 24) {
-        let cardGame = div({ className: "card-24" }, container);
-      } else if (gh.length === 16) {
-        let cardGame = div({ className: "card-16" }, container);
+  }
+  showCards(cards) {
+    console.log(cards.length);
+    cards.forEach((card) => {
+      if (cards.length === 32) {
+        let cardGame = div(
+          { className: "card-game card-16" },
+          this.cardContainer
+        );
+        let icon = span(
+          { innerHTML: card.icon, className: "icon icon-16" },
+          cardGame
+        );
+      } else if (cards.length === 24) {
+        let cardGame = div(
+          { className: "card-game card-12" },
+          this.cardContainer
+        );
+        let icon = span(
+          { innerHTML: card.icon, className: "icon icon-12" },
+          cardGame
+        );
       } else {
-        let cardGame = div({ className: "card-8" }, container);
+        let cardGame = div(
+          { className: "card-game card-8" },
+          this.cardContainer
+        );
+        let icon = span(
+          { innerHTML: card.icon, className: "icon icon-8" },
+          cardGame
+        );
       }
     });
   }
