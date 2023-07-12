@@ -2,6 +2,7 @@ import { THEME_FACES, THEME_FLAGS, THEME_FOOD } from "../../libs/constants.js";
 import { button } from "../../libs/html.js";
 import { View } from "../view.js";
 
+
 export class ThemesView extends View {
   constructor(controller, parent) {
     super(controller, parent);

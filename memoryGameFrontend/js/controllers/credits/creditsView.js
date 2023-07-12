@@ -1,6 +1,7 @@
 import { div, img, a } from "../../libs/html.js";
 import { View } from "../view.js";
 
+
 export class CreditsView extends View {
   constructor(controller, parent) {
     super(controller, parent);

@@ -4,7 +4,6 @@ import {
   DIFFICULTY_MEDIUM,
 } from "../../libs/constants.js";
 import { button, span } from "../../libs/html.js";
-
 import { View } from "../view.js";
 
 export class DifficultyView extends View {
@@ -21,7 +20,6 @@ export class DifficultyView extends View {
       },
       this.elementsContainer
     );
-
     let mediumBtn = button(
       {
         innerHTML: "Medium",

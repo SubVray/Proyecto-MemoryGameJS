@@ -43,7 +43,6 @@ export class View {
       ease: "expo.in",
     });
   }
-
   hideComplete(state) {
     let customEvent = new CustomEvent("hide-complete", {
       detail: {

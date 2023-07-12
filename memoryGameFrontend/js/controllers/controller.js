@@ -10,6 +10,7 @@ export class Controller {
     this.view.delete();
   }
 
+  
   hide(state) {
     this.view.hide(state);
   }

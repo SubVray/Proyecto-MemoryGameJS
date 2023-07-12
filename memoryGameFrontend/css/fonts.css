@@ -28,6 +28,7 @@
   font-weight: normal;
   src: url("../src/fonts/VictorMono-Italic.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Victor-Mono-Regular";
   font-style: normal;

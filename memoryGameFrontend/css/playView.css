@@ -40,14 +40,12 @@ button.btn-reset {
   height: 30px;
   padding: 8px 12px;
 }
-
 .data {
   color: rgb(182, 182, 182);
 }
 /* .clicks,
 .time {
 } */
-
 .card-game {
   align-items: center;
   background-color: #ffffff;
@@ -57,7 +55,6 @@ button.btn-reset {
   display: flex;
   justify-content: center;
 }
-
 .icon {
   font-size: 2.5em;
 }
@@ -70,8 +67,6 @@ button.btn-reset {
 .card-16 {
   border-radius: 8px;
 }
-
-
 .card-8- {
   background-color: #fff;
   background-image: url(../src/images/help-circle.svg);

@@ -9,13 +9,17 @@ import {
 import { button, div, img } from "../../libs/html.js";
 import { View } from "../view.js";
 
+
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.id = "home-view";
     this.elementsContainer.className = "bg home-view";
 
-    let logoContainer = div({ className: "" }, this.elementsContainer);
+    let logoContainer = div(
+      { className: "logo-container" },
+      this.elementsContainer
+    );
     let logo = img(
       {
         src: "src/images/memory-game.png",

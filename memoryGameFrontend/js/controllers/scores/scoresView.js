@@ -10,7 +10,6 @@ export class ScoresView extends View {
       { className: "card-container" },
       this.elementsContainer
     );
-
     let gh = [1, 1, 1, 1, 1, 1];
     gh.forEach((element) => {
       let card = div({ className: "card" }, cardContainer);

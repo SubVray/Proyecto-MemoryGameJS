@@ -7,6 +7,7 @@ export class LoginView extends View {
     this.container.id = "login-view";
     this.elementsContainer.className = "bg login-view";
 
+    
     let logo = img(
       {
         src: "src/images/memory-game.png",

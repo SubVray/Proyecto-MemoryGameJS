@@ -10,7 +10,6 @@
   top: 0;
   width: 100%;
 }
-
 .form-login {
   align-items: center;
   display: flex;
@@ -18,7 +17,6 @@
   gap: 12px;
   justify-content: center;
 }
-
 input {
   border: 1px solid transparent;
   border-radius: 8px;
@@ -33,14 +31,12 @@ input:is(:focus) {
   border: 1px solid var(--secondary-color);
   box-shadow: 0 0 2px 3px var(--secondary-color);
 }
-
 .logo {
   margin-top: -100px;
   max-width: 200px;
   min-width: 80px;
   width: 100%;
 }
-
 .text-login {
   font-family: "Victor-Mono-Bold";
   font-size: 1.2em;

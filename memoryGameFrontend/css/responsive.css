@@ -1,5 +1,14 @@
 /* ! 375px a 320px */
 @media (max-width: 375px) {
+  .logo-container {
+    max-width: 150px;
+    object-fit: cover;
+    width: 100%;
+  }
+  button {
+    height: 50px;
+    max-width: 180px;
+  }
   .container {
     gap: 8px;
   }
@@ -27,7 +36,13 @@
 }
 /* ! 376px a 576px */
 @media (min-width: 376px) {
+  .logo-container {
+    max-width: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
   button {
+    height: 50px;
     max-width: 220px;
   }
   .container {
@@ -60,6 +75,7 @@
 /* ! 576px a 768px */
 @media (min-width: 576px) {
   button {
+    height: 50px;
     max-width: 233px;
   }
   .main-container {
@@ -87,6 +103,15 @@
 
 /* ! 768px a 992px */
 @media (min-width: 768px) {
+  .logo-container {
+    max-width: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  button {
+    height: 55px;
+    max-width: 233px;
+  }
   .card-8 {
     background-color: red;
     height: 5em;

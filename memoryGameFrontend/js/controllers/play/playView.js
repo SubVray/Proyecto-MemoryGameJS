@@ -10,7 +10,6 @@ export class PlayView extends View {
       { className: "container" },
       this.elementsContainer
     );
-
     gameNav.innerHTML = "";
     let gameNavContainer1 = div({ className: "game-nav-container1" }, gameNav);
     let gameNavContainer2 = div({ className: "game-nav-container2" }, gameNav);

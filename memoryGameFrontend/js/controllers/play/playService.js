@@ -1,5 +1,6 @@
 import { Card } from "../../models/cardModel.js";
 
+
 export class PlayService {
   constructor(controller) {
     this.controller = controller;
@@ -25,6 +26,5 @@ export class PlayService {
     };
     request.send();
   }
-
   sendScore() {}
 }

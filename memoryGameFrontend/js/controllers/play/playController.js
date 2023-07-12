@@ -10,7 +10,6 @@ export class PlayController extends Controller {
     this.service = new PlayService(this);
     this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
   }
-
   showCards(cards) {
     this.cards = cards;
     this.view.showCards(cards);

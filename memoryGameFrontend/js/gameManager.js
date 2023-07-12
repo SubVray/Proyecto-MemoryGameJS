@@ -109,7 +109,6 @@ export class GameManager {
         break;
     }
   }
-
   goTo(state) {
     if (this.controller !== null) {
       this.controller.hide(state);
