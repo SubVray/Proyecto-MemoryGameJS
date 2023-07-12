@@ -92,3 +92,33 @@
   height: 100%;
   width: 42px;
 }
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.card-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.card-container::-webkit-scrollbar:vertical {
+  width: 4px;
+}
+
+.card-container::-webkit-scrollbar-button:increment,
+.card-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+.card-container::-webkit-scrollbar:horizontal {
+  height: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #ff6868;
+  border: 1px solid #ff6868;
+  border-radius: 8px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  border-radius: 4px;
+  margin: 20px 0;
+}
