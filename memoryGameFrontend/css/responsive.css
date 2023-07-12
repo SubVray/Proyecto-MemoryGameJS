@@ -1,25 +1,19 @@
-/* // Small devices (landscape phones, 576px and up) */
+/* ! 375px a 320px */
 @media (max-width: 375px) {
   .container {
     gap: 8px;
   }
   .card-8 {
-    background-color: #fff;
-    border-radius: 8px;
     height: 5em;
     width: 5em;
   }
   .card-12 {
-    background-color: #fff;
-    border-radius: 8px;
     height: 4em;
     width: 4em;
   }
   .card-16 {
-    background-color: #fff;
-    border-radius: 8px;
-    height: 3.5em;
-    width: 3.5em;
+    height: 3.4em;
+    width: 3.4em;
   }
   .icon-8 {
     font-size: 2.5em;
@@ -28,31 +22,30 @@
     font-size: 2.2em;
   }
   .icon-16 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 }
-/* // Small devices (landscape phones, 576px and less) */
+/* ! 376px a 576px */
 @media (min-width: 376px) {
+  button {
+    max-width: 220px;
+  }
   .container {
-    gap: 12px;
+    gap: 8px;
   }
   .card-8 {
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: green;
     height: 5em;
     width: 5em;
   }
   .card-12 {
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: green;
     height: 5em;
     width: 5em;
   }
   .card-16 {
-    background-color: #fff;
-    border-radius: 8px;
-    height: 3.8em;
-    width: 3.8em;
+    height: 3.6em;
+    width: 3.6em;
   }
   .icon-8 {
     font-size: 2.5em;
@@ -64,54 +57,57 @@
     font-size: 2.5em;
   }
 }
-/* // Small devices (landscape phones, 576px and less) */
+/* ! 576px a 768px */
 @media (min-width: 576px) {
+  button {
+    max-width: 233px;
+  }
   .main-container {
     max-width: 650px;
     width: 100%;
   }
   .container {
-    gap: 12px;
-    width: 400px;
+    width: 90%;
   }
   .card-8 {
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: red;
     height: 5em;
     width: 5em;
   }
   .card-12 {
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: red;
     height: 5em;
     width: 5em;
   }
   .card-16 {
-    background-color: #fff;
-    border-radius: 8px;
-    height: 4em;
-    width: 4em;
-  }
-  .icon-8 {
-    font-size: 2.5em;
-  }
-  .icon-12 {
-    font-size: 1.5em;
-  }
-  .icon-16 {
-    font-size: 1.5em;
+    height: 4.6em;
+    width: 4.6em;
   }
 }
 
-/* // Medium devices (tablets, 768px and up) */
+/* ! 768px a 992px */
 @media (min-width: 768px) {
+  .card-8 {
+    background-color: red;
+    height: 5em;
+    width: 5em;
+  }
+  .card-12 {
+    background-color: red;
+    height: 5em;
+    width: 5em;
+  }
+  .card-16 {
+    height: 5em;
+    width: 5em;
+  }
 }
 
-/* // Large devices (desktops, 992px and up) */
+/* ! 992px a 1200px */
 @media (min-width: 992px) {
 }
 
-/* // X-Large devices (large desktops, 1200px and up) */
+/* ! 1200px a 1400px */
 @media (min-width: 1200px) {
 }
 

@@ -7,7 +7,7 @@
   height: 100%;
   justify-content: center;
   left: 0;
-  padding: 12px 20px;
+  padding: 12px 20px !important;
   position: absolute;
   right: 0;
   top: 0;
@@ -50,32 +50,28 @@ button.btn-reset {
 
 .card-game {
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
+
 .icon {
   font-size: 2.5em;
 }
-
 .card-8 {
-  background-color: #fff;
   border-radius: 8px;
-  height: 7em;
-  width: 7em;
 }
 .card-12 {
-  background-color: #fff;
   border-radius: 8px;
-  height: 5em;
-  width: 5em;
 }
 .card-16 {
-  background-color: #fff;
   border-radius: 8px;
-  height: 4em;
-  width: 4em;
 }
+
+
 .card-8- {
   background-color: #fff;
   background-image: url(../src/images/help-circle.svg);

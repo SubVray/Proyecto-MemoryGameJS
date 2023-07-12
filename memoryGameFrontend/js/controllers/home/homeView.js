@@ -6,7 +6,7 @@ import {
   SCORES_STATE,
   THEMES_STATE,
 } from "../../libs/constants.js";
-import { button } from "../../libs/html.js";
+import { button, div, img } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class HomeView extends View {
@@ -14,6 +14,16 @@ export class HomeView extends View {
     super(controller, parent);
     this.container.id = "home-view";
     this.elementsContainer.className = "bg home-view";
+
+    let logoContainer = div({ className: "" }, this.elementsContainer);
+    let logo = img(
+      {
+        src: "src/images/memory-game.png",
+        alt: "logo",
+        className: "logo-menu",
+      },
+      logoContainer
+    );
 
     let loginBtn = button(
       {

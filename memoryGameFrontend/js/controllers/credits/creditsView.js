@@ -16,14 +16,26 @@ export class CreditsView extends View {
       },
       logoContainer
     );
+    let logoContainerCreator = div(
+      { className: "container-logo-creator" },
+      this.elementsContainer
+    );
     let CREATOR = a(
       {
-        innerHTML: "Jim Bolaños",
+        innerHTML: "",
         href: "https://github.com/SubVray",
         className: "link",
         target: "_blank",
       },
-      this.elementsContainer
+      logoContainerCreator
+    );
+    let logoCreator = img(
+      {
+        src: "src/images/SubVray_Logo_Transparente.png",
+        alt: "logo creator",
+        className: "logo-creator",
+      },
+      CREATOR
     );
   }
 }

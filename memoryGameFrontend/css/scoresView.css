@@ -13,8 +13,7 @@
   width: 100%;
 }
 .card-container {
-  height: 97%;
-  margin-top: -20px;
+  height: 100%;
   overflow-y: scroll;
   padding: 12px 20px;
   width: 100%;
@@ -67,10 +66,12 @@
   font-size: 1.2em;
 }
 .score-data {
+  color: #fff;
   font-family: var(--Victor-Mono-Bold);
   font-size: 2.2em;
 }
 .score {
+  color: #fff;
   font-family: var(--Victor-Mono-Bold);
   font-size: 1.5em;
 }
