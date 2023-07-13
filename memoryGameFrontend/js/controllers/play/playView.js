@@ -2,39 +2,49 @@ import { div, p, button, span } from "../../libs/html.js";
 import { View } from "../view.js";
 
 export class PlayView extends View {
-  constructor(controller, parent, gameNav) {
+  constructor(controller, parent) {
     super(controller, parent);
     this.container.id = " play-view";
     this.elementsContainer.className = "bg play-view";
-    this.cardContainer = div(
-      { className: "container" },
+
+    let navHub = div(
+      { id: "game-nav", className: "game-nav bg" },
       this.elementsContainer
     );
-    gameNav.innerHTML = "";
-    let gameNavContainer1 = div({ className: "game-nav-container1" }, gameNav);
-    let gameNavContainer2 = div({ className: "game-nav-container2" }, gameNav);
+    let gameNavContainer1 = div({ className: "game-nav-container1" }, navHub);
+    let gameNavContainer2 = div({ className: "game-nav-container2" }, navHub);
     let clicks = p(
       {
-        innerHTML: `Clicks: <span class="data">${40}</span>`,
+        innerHTML: `Clicks: `,
         className: "clicks",
       },
       gameNavContainer1
     );
-    let time = p(
-      { innerHTML: `Time: <span class="data">${40}</span>`, className: "time" },
-      gameNavContainer1
-    );
+    this.clickText = span({ innerHTML: `0` }, clicks);
+
+    let time = p({ innerHTML: `Time: `, className: "time" }, gameNavContainer1);
+    this.timeText = span({ innerHTML: `0` }, time);
+
     let btnReset = button(
-      { innerHTML: "Reset", className: "btn-reset", type: "button" },
+      {
+        innerHTML: "Reset",
+        className: "btn-reset",
+        type: "button",
+        onclick: this.onReset.bind(this),
+      },
       gameNavContainer2
+    );
+    this.cardContainer = div(
+      { className: " container" },
+      this.elementsContainer
     );
   }
   showCards(cards) {
-    console.log(cards.length);
+    this.cardContainer.innerHTML = "";
     cards.forEach((card) => {
       if (cards.length === 32) {
         let cardGame = div(
-          { className: "card-game card-16" },
+          { className: "card-game card-hidden card-16" },
           this.cardContainer
         );
         let icon = span(
@@ -43,7 +53,7 @@ export class PlayView extends View {
         );
       } else if (cards.length === 24) {
         let cardGame = div(
-          { className: "card-game card-12" },
+          { className: "card-game card-hidden card-12" },
           this.cardContainer
         );
         let icon = span(
@@ -52,7 +62,7 @@ export class PlayView extends View {
         );
       } else {
         let cardGame = div(
-          { className: "card-game card-8" },
+          { className: "card-game card-hidden card-8" },
           this.cardContainer
         );
         let icon = span(
@@ -61,5 +71,12 @@ export class PlayView extends View {
         );
       }
     });
+  }
+  onReset() {
+    this.controller.resetGame();
+  }
+  updateHUD(clicks, time) {
+    this.clickText.innerHTML = `${clicks}`;
+    this.timeText.innerHTML = `${time}`;
   }
 }

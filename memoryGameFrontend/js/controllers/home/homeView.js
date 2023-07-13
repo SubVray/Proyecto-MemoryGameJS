@@ -9,7 +9,6 @@ import {
 import { button, div, img } from "../../libs/html.js";
 import { View } from "../view.js";
 
-
 export class HomeView extends View {
   constructor(controller, parent) {
     super(controller, parent);

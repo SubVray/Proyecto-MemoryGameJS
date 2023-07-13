@@ -22,11 +22,14 @@
 }
 .game-nav {
   align-items: center;
-  border-radius: 8px;
+  border-bottom: 1px solid var(--secondary-color-logo);
   display: flex;
   height: 50px;
   justify-content: space-between;
   padding: 0 12px;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 999;
 }
 .game-nav-container1 {
@@ -68,6 +71,18 @@ button.btn-reset {
 .card-16 {
   border-radius: 8px;
 }
+
+.card-hidden {
+  background-image: url(../src/images/help-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card-showing {
+}
+.card-discovered {
+}
+
 .card-8- {
   background-color: #fff;
   background-image: url(../src/images/help-circle.svg);

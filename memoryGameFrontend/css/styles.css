@@ -77,7 +77,6 @@ body {
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   height: 100vh;
   overflow: hidden;
   padding: 8px 8px 8px 8px;
@@ -86,7 +85,7 @@ body {
 .content-container {
   align-items: center;
   background-color: var(--quaternary-color);
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   display: flex;
   flex-direction: column;
   height: 100%;

@@ -23,23 +23,20 @@ export class GameManager {
   constructor() {
     this.difficulty = DIFFICULTY_EASY;
     this.theme = THEME_FOOD;
-
     this.controller = null;
     this.$navigationContainer = document.getElementById("navigation-container");
     this.$contentContainer = document.getElementById("content-container");
-    this.$gameNav = document.getElementById("game-nav");
     this.$backButton = document.getElementById("btn-back");
     this.$title = document.getElementById("title-navigation");
     this.$backButton.addEventListener(
       "click",
       this.goTo.bind(this, HOME_STATE)
     );
-    this.homeController = new HomeController(this, this.$contentContainer);
-    this.presenting(HOME_STATE);
 
     this.$contentContainer.addEventListener("home-button-click", (event) => {
       this.presenting(event.detail.state);
     });
+
     this.$contentContainer.addEventListener("hide-complete", (event) => {
       this.presenting(event.detail.state);
     });
@@ -53,6 +50,21 @@ export class GameManager {
       this.theme = event.detail.theme;
       this.saveTheme();
     });
+    this.$contentContainer.addEventListener("user-login", (event) => {
+      this.username = event.detail.username;
+      this.usernameLogin();
+      this.goTo(HOME_STATE);
+    });
+
+    this.loadDifficulty();
+    this.loadTheme();
+    this.loadUsername();
+
+    if (this.username) {
+      this.goTo(PLAY_STATE);
+    } else {
+      this.goTo(LOGIN_STATE);
+    }
   }
 
   presenting(state) {
@@ -60,8 +72,8 @@ export class GameManager {
       this.controller.delete();
       this.controller = null;
     }
+
     this.$backButton.classList.remove("hidden");
-    this.$gameNav.classList.add("hidden");
     switch (state) {
       case LOGIN_STATE:
         this.$title.innerHTML = "LOGIN";
@@ -72,16 +84,16 @@ export class GameManager {
         this.$title.innerHTML = "HOME";
         this.$title.className = "title-home";
         this.$backButton.classList.add("hidden");
+        this.controller = new HomeController(
+          this,
+          this.$contentContainer,
+          this.username
+        );
         break;
       case PLAY_STATE:
         this.$title.innerHTML = "GAME";
         this.$title.className = "title-l ";
-        this.$gameNav.classList.remove("hidden");
-        this.controller = new PlayController(
-          this,
-          this.$contentContainer,
-          this.$gameNav
-        );
+        this.controller = new PlayController(this, this.$contentContainer);
         break;
       case SCORES_STATE:
         this.$title.innerHTML = "SCORES";
@@ -91,7 +103,6 @@ export class GameManager {
       case DIFFICULTY_STATE:
         this.$title.innerHTML = "DIFFICULTY";
         this.$title.className = "title-l title-difficulty ";
-
         this.controller = new DifficultyController(
           this,
           this.$contentContainer
@@ -109,6 +120,7 @@ export class GameManager {
         break;
     }
   }
+
   goTo(state) {
     if (this.controller !== null) {
       this.controller.hide(state);
@@ -116,6 +128,7 @@ export class GameManager {
       this.presenting(state);
     }
   }
+
   loadDifficulty() {
     if (localStorage.getItem("difficulty")) {
       this.difficulty = localStorage.getItem("difficulty");
@@ -134,5 +147,14 @@ export class GameManager {
 
   saveTheme() {
     localStorage.setItem("theme", this.theme);
+  }
+
+  usernameLogin() {
+    localStorage.setItem("username", this.username);
+  }
+  loadUsername() {
+    if (localStorage.getItem("username")) {
+      this.username = localStorage.getItem("username");
+    }
   }
 }
