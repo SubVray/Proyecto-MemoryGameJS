@@ -12,6 +12,11 @@ export class PlayController extends Controller {
     this.timer = null;
     this.time = 0;
     this.clicks = 0;
+
+    this.view.container.addEventListener(
+      "card-selected",
+      this.onCardSelected.bind(this)
+    );
   }
   showCards(cards) {
     this.cards = cards;
@@ -30,5 +35,13 @@ export class PlayController extends Controller {
   gameTick() {
     this.time += 1;
     this.view.updateHUD(this.clicks, this.time);
+  }
+  onCardSelected(event) {
+    console.log(this.cards);
+
+    this.cards.forEach((card) => {
+      if (card.isSelected) {
+      }
+    });
   }
 }

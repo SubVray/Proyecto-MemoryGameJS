@@ -20,6 +20,7 @@
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
+  padding-top: 50px;
 }
 .game-nav {
   align-items: center;
@@ -50,67 +51,3 @@ button.btn-reset {
 /* .clicks,
 .time {
 } */
-.card-game {
-  align-items: center;
-  background-color: #ffffff;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-.icon {
-  filter: drop-shadow(1px 4px 1px rgba(0, 0, 0, 0.459));
-  font-size: 2.5em;
-}
-.card-8 {
-  border-radius: 8px;
-}
-.card-12 {
-  border-radius: 8px;
-}
-.card-16 {
-  border-radius: 8px;
-}
-
-.card-hidden {
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.card-showing {
-}
-.card-discovered {
-}
-
-.card-8- {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 7em;
-  width: 7em;
-}
-.card-16- {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 5em;
-  width: 5em;
-}
-.card-24- {
-  background-color: #fff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  height: 4em;
-  width: 4em;
-}
