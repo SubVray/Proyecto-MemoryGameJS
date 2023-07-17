@@ -1,7 +1,7 @@
 import { div, p, button, span } from "../../libs/html.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-export class PlayView extends View {
+export class PlayView extends ControllerView {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.id = " play-view";

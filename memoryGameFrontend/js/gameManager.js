@@ -18,6 +18,7 @@ import {
   THEME_FOOD,
 } from "./libs/constants.js";
 import { CreditsController } from "./controllers/credits/creditsController.js";
+import { PlayView } from "./controllers/play/playView.js";
 
 export class GameManager {
   constructor() {
@@ -59,12 +60,13 @@ export class GameManager {
     this.loadDifficulty();
     this.loadTheme();
     this.loadUsername();
+    this.presenting(PlayView);
 
-    if (this.username) {
-      this.goTo(PLAY_STATE);
-    } else {
-      this.goTo(LOGIN_STATE);
-    }
+    // if (this.username) {
+    //   this.goTo(PLAY_STATE);
+    // } else {
+    //   this.goTo(LOGIN_STATE);
+    // }
   }
 
   presenting(state) {

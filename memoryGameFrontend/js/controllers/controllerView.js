@@ -1,16 +1,16 @@
 import { div } from "../libs/html.js";
+import { View } from "../views/view.js";
 
-export class View {
+export class ControllerView extends View {
   constructor(controller, parent) {
+    super(parent); // ! parent es content-container
     this.controller = controller;
-    this.parent = parent;
-    this.container = div({}, this.parent);
     this.fadeContainer = div(
-      { className: "view-fade-container" },
+      { className: "controller-view-fade-container" },
       this.container
     );
     this.elementsContainer = div(
-      { className: "view-elementsContainer" },
+      { className: "controller-view-elementsContainer" },
       this.container
     );
     this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)`;

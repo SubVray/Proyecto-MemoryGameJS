@@ -1,8 +1,7 @@
 import { div, img, a } from "../../libs/html.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-
-export class CreditsView extends View {
+export class CreditsView extends ControllerView {
   constructor(controller, parent) {
     super(controller, parent);
     this.container.id = "themes-view";
