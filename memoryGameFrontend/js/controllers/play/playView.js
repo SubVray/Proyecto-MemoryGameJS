@@ -1,4 +1,5 @@
 import { div, p, button, span } from "../../libs/html.js";
+import { CardView } from "../../views/cardView.js";
 import { ControllerView } from "../controllerView.js";
 
 export class PlayView extends ControllerView {
@@ -34,40 +35,44 @@ export class PlayView extends ControllerView {
       },
       gameNavContainer2
     );
+
     this.cardContainer = div(
-      { className: " container" },
+      { className: "container container-cards" },
       this.elementsContainer
     );
   }
+
   showCards(cards) {
     this.cardContainer.innerHTML = "";
+    let classNameCard = "";
+    let classNameIcon = "";
     cards.forEach((card) => {
       if (cards.length === 32) {
-        let cardGame = div(
-          { className: "card-game card-hidden card-16" },
-          this.cardContainer
-        );
-        let icon = span(
-          { innerHTML: card.icon, className: "icon icon-16" },
-          cardGame
+        classNameCard = "card-game card-hidden card-16";
+        classNameIcon = "icon icon-16";
+        let cardView = new CardView(
+          this.cardContainer,
+          card,
+          classNameCard,
+          classNameIcon
         );
       } else if (cards.length === 24) {
-        let cardGame = div(
-          { className: "card-game card-hidden card-12" },
-          this.cardContainer
-        );
-        let icon = span(
-          { innerHTML: card.icon, className: "icon icon-12" },
-          cardGame
+        classNameCard = "card-game card-hidden card-12";
+        classNameIcon = "icon icon-12";
+        let cardView = new CardView(
+          this.cardContainer,
+          card,
+          classNameCard,
+          classNameIcon
         );
       } else {
-        let cardGame = div(
-          { className: "card-game card-hidden card-8" },
-          this.cardContainer
-        );
-        let icon = span(
-          { innerHTML: card.icon, className: "icon icon-8" },
-          cardGame
+        classNameCard = "card-game card-hidden card-8";
+        classNameIcon = "icon icon-8";
+        let cardView = new CardView(
+          this.cardContainer,
+          card,
+          classNameCard,
+          classNameIcon
         );
       }
     });
@@ -80,3 +85,32 @@ export class PlayView extends ControllerView {
     this.timeText.innerHTML = `${time}`;
   }
 }
+
+//  if (cards.length === 32) {
+//    let cardGame = div(
+//      { className: "card-game card-hidden card-16" },
+//      this.cardContainer
+//    );
+//    let icon = span(
+//      { innerHTML: card.icon, className: "icon icon-16" },
+//      cardGame
+//    );
+//  } else if (cards.length === 24) {
+//    let cardGame = div(
+//      { className: "card-game card-hidden card-12" },
+//      this.cardContainer
+//    );
+//    let icon = span(
+//      { innerHTML: card.icon, className: "icon icon-12" },
+//      cardGame
+//    );
+//  } else {
+//    let cardGame = div(
+//      { className: "card-game card-hidden card-8" },
+//      this.cardContainer
+//    );
+//    let icon = span(
+//      { innerHTML: card.icon, className: "icon icon-8" },
+//      cardGame
+//    );
+//  }

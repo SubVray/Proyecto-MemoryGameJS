@@ -60,7 +60,7 @@ export class GameManager {
     this.loadDifficulty();
     this.loadTheme();
     this.loadUsername();
-    this.presenting(PlayView);
+    this.presenting(PLAY_STATE);
 
     // if (this.username) {
     //   this.goTo(PLAY_STATE);
