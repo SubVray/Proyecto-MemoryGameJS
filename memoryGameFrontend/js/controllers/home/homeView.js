@@ -6,14 +6,15 @@ import {
   SCORES_STATE,
   THEMES_STATE,
 } from "../../libs/constants.js";
-import { button, div, img } from "../../libs/html.js";
+import { button, div, img, span } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 
 export class HomeView extends ControllerView {
-  constructor(controller, parent) {
+  constructor(controller, parent, username) {
     super(controller, parent);
     this.container.id = "home-view";
     this.elementsContainer.className = "bg home-view";
+    this.username = username;
 
     let logoContainer = div(
       { className: "logo-container" },
@@ -28,18 +29,21 @@ export class HomeView extends ControllerView {
       logoContainer
     );
 
-    let loginBtn = button(
+    this.loginBtn = button(
       {
-        innerHTML: "Login",
+        innerHTML: this.username ? `${this.username}` : "Login",
         className: "btn-menu login-button",
         onclick: this.onButtonClick.bind(this, LOGIN_STATE),
       },
       this.elementsContainer
     );
+
     let playBtn = button(
       {
         innerHTML: "Play",
-        className: " btn-menu play-button",
+        className: username
+          ? "btn-menu play-button"
+          : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, PLAY_STATE),
       },
       this.elementsContainer
@@ -47,7 +51,9 @@ export class HomeView extends ControllerView {
     let scoreBtn = button(
       {
         innerHTML: "Scores",
-        className: " btn-menu play-button",
+        className: username
+          ? "btn-menu scores-button"
+          : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, SCORES_STATE),
       },
       this.elementsContainer
@@ -55,7 +61,9 @@ export class HomeView extends ControllerView {
     let difficultyBtn = button(
       {
         innerHTML: "Difficulty",
-        className: " btn-menu play-button",
+        className: username
+          ? "btn-menu difficulty-button"
+          : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, DIFFICULTY_STATE),
       },
       this.elementsContainer
@@ -63,7 +71,9 @@ export class HomeView extends ControllerView {
     let themesBtn = button(
       {
         innerHTML: "Themes",
-        className: " btn-menu play-button",
+        className: username
+          ? "btn-menu themes-button"
+          : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, THEMES_STATE),
       },
 
@@ -72,7 +82,9 @@ export class HomeView extends ControllerView {
     let creditsBtn = button(
       {
         innerHTML: "Credits",
-        className: " btn-menu play-button",
+        className: username
+          ? "btn-menu credits-button"
+          : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, CREDITS_STATE),
       },
       this.elementsContainer

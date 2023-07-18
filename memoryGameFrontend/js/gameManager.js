@@ -53,14 +53,14 @@ export class GameManager {
     });
     this.$contentContainer.addEventListener("user-login", (event) => {
       this.username = event.detail.username;
-      this.usernameLogin();
+      this.saveUsername();
       this.goTo(HOME_STATE);
     });
 
     this.loadDifficulty();
     this.loadTheme();
     this.loadUsername();
-    this.presenting(PLAY_STATE);
+    this.presenting(HOME_STATE);
 
     // if (this.username) {
     //   this.goTo(PLAY_STATE);
@@ -151,7 +151,7 @@ export class GameManager {
     localStorage.setItem("theme", this.theme);
   }
 
-  usernameLogin() {
+  saveUsername() {
     localStorage.setItem("username", this.username);
   }
   loadUsername() {

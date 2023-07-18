@@ -40,7 +40,8 @@
   color: var(--disable-color-text);
   outline: none !important;
 }
-.disable-btn:hover {
+.disable-btn:is(:hover, :focus, :active) {
+  background-color: var(--disable-color-bg);
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
@@ -110,6 +111,7 @@ button {
   letter-spacing: 2px;
   max-width: 230px;
   outline: var(--primary-color);
+  position: relative;
   scale: 1;
   text-align: center;
   transition: 0.3s;
