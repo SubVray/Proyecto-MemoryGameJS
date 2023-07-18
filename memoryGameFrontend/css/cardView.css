@@ -68,6 +68,16 @@
 }
 
 .card-discovered {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transform: rotateY(180deg);
+  transition: all 0.5s linear;
+}
+.icon-discovered {
+  background-color: #fffd6f;
+  border: 1px solid rgba(49, 49, 49, 0.267);
+  box-shadow: 0 0 1.5px 0.5px black;
 }
 
 .card-8- {

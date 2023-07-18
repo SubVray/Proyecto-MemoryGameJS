@@ -13,10 +13,9 @@ export class PlayController extends Controller {
     this.time = 0;
     this.clicks = 0;
 
-    this.view.container.addEventListener(
-      "card-selected",
-      this.onCardSelected.bind(this)
-    );
+    window.addEventListener("card-selected", () => {
+      this.onCardSelected();
+    });
   }
   showCards(cards) {
     this.cards = cards;
@@ -36,12 +35,53 @@ export class PlayController extends Controller {
     this.time += 1;
     this.view.updateHUD(this.clicks, this.time);
   }
-  onCardSelected(event) {
-    console.log(this.cards);
+  onCardSelected() {
+    let customEvent = new CustomEvent("show-card-on-selected", {
+      detail: {
+        card: this.card,
+      },
+      bubbles: true,
+      cancelable: true,
+      composed: false,
+    });
+    this.view.container.dispatchEvent(customEvent);
+
+    let cardSelected1 = null;
+    let cardSelected2 = null;
 
     this.cards.forEach((card) => {
-      if (card.isSelected) {
+      if (!card.isDiscovered) {
+        if (cardSelected1 === null && card.isSelected) {
+          cardSelected1 = card;
+        } else if (cardSelected2 === null && card.isSelected) {
+          cardSelected2 = card;
+        }
       }
     });
+
+    if (cardSelected1 !== null && cardSelected2 !== null) {
+      if (cardSelected1.id === cardSelected2.id) {
+        let customEvent = new CustomEvent("show-card-on-discovered", {
+          detail: {
+            card: this.card,
+          },
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+        });
+        this.view.container.dispatchEvent(customEvent);
+      } else {
+        let customEvent = new CustomEvent("hide-selected-card", {
+          detail: {
+            card: this.card,
+          },
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+        });
+        this.view.container.dispatchEvent(customEvent);
+        //TODO: check if game is complete
+      }
+    }
   }
 }

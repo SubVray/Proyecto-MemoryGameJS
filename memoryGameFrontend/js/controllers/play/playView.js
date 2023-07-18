@@ -81,8 +81,7 @@ export class PlayView extends ControllerView {
     this.controller.resetGame();
   }
   updateHUD(clicks, time) {
-    this.clickText.innerHTML = `${clicks}`;
     this.timeText.innerHTML = `${time}`;
+    this.clickText.innerHTML = `${clicks}`;
   }
 }
-

@@ -21,6 +21,16 @@ export class CardView extends View {
     );
 
     this.container.onclick = this.onSelected.bind(this);
+    window.addEventListener("show-card-on-selected", (event) => {
+      this.showOnSelected();
+    });
+
+    window.addEventListener("show-card-on-discovered", (event) => {
+      this.showOnDiscovered();
+    });
+    window.addEventListener("hide-selected-card", (event) => {
+      this.hide();
+    });
   }
   onSelected() {
     this.card.isSelected = true;
@@ -34,14 +44,42 @@ export class CardView extends View {
       composed: false,
     });
     this.container.dispatchEvent(customEvent);
-    this.showOnSelected();
   }
 
   showOnSelected() {
     if (this.card.isSelected) {
-    //   this.container.classList.add("card-selected");
+      // ? agrega la clase card-selected para hacer que haga la animación 3D
       this.cardGame.classList.add("card-selected");
       this.cardBack.classList.add("icon-selected");
+    }
+  }
+  showOnDiscovered() {
+    if (this.card.isSelected && !this.card.isDiscovered) {
+      this.card.isDiscovered = true;
+      // ? agrega la clase card-selected para hacer que haga la animación 3D
+      this.cardGame.classList.remove("card-selected");
+      this.cardGame.classList.add("card-discovered");
+      this.cardBack.classList.remove("icon-selected");
+      this.cardBack.classList.add("icon-discovered");
+      this.container.onclick = null;
+      window.removeEventListener("show-card-on-selected", (event) => {
+        this.showOnSelected();
+      });
+
+      window.removeEventListener("show-card-on-discovered", (event) => {
+        this.showOnDiscovered();
+      });
+      window.removeEventListener("hide-selected-card", (event) => {
+        this.hide();
+      });
+    }
+  }
+
+  hide() {
+    if (this.card.isSelected && !this.card.isDiscovered) {
+      this.card.isSelected = false;
+      this.cardGame.classList.remove("card-selected");
+      this.cardGame.classList.remove("card-discovered");
     }
   }
 }
