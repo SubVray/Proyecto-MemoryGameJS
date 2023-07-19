@@ -16,6 +16,7 @@ export class PlayController extends Controller {
     window.addEventListener("card-selected", () => {
       this.onCardSelected();
     });
+    this.hiddenTimer = null;
   }
   showCards(cards) {
     this.cards = cards;
@@ -36,6 +37,7 @@ export class PlayController extends Controller {
     this.view.updateHUD(this.clicks, this.time);
   }
   onCardSelected() {
+    if (this.hiddenTimer !== null) return;
     let customEvent = new CustomEvent("show-card-on-selected", {
       detail: {
         card: this.card,
@@ -71,15 +73,19 @@ export class PlayController extends Controller {
         });
         this.view.container.dispatchEvent(customEvent);
       } else {
-        let customEvent = new CustomEvent("hide-selected-card", {
-          detail: {
-            card: this.card,
-          },
-          bubbles: true,
-          cancelable: true,
-          composed: false,
-        });
-        this.view.container.dispatchEvent(customEvent);
+        this.hiddenTimer = window.setTimeout(() => {
+          let customEvent = new CustomEvent("hide-selected-card", {
+            detail: {
+              card: this.card,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+          });
+          this.view.container.dispatchEvent(customEvent);
+          window.clearTimeout(this.hiddenTimer);
+          this.hiddenTimer = null;
+        }, 600);
         //TODO: check if game is complete
       }
     }
