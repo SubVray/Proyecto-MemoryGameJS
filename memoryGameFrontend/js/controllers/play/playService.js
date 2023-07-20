@@ -1,22 +1,21 @@
 import { Card } from "../../models/cardModel.js";
+import { Service } from "../service.js";
 
-
-export class PlayService {
+export class PlayService extends Service {
   constructor(controller) {
-    this.controller = controller;
+    super(controller);
   }
 
   getCards(difficulty, theme) {
-    var cards = [];
-    // var url = '../../../data/cards.json';
-    var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}`;
-    var request = new XMLHttpRequest();
+    let cards = [];
+    let url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}`;
+    let request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {
       if (request.status === 200) {
-        var data = JSON.parse(request.response);
+        let data = JSON.parse(request.response);
         data.cards.forEach((cardData) => {
-          var card = new Card(cardData.id, cardData.icon);
+          let card = new Card(cardData.id, cardData.icon);
           cards.push(card);
         });
       } else {
@@ -26,5 +25,18 @@ export class PlayService {
     };
     request.send();
   }
-  sendScore() {}
+  sendScore(score, clicks, time, username) {
+    // console.log(username);
+    // let url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores/`;
+    // let request = new XMLHttpRequest();
+    // request.open("post", url);
+    // request.send(
+    //   JSON.stringify({
+    //     score: score,
+    //     clicks: clicks,
+    //     time: time,
+    //     username: username,
+    //   })
+    // );
+  }
 }

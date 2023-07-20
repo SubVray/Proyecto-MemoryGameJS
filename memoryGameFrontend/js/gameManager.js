@@ -18,12 +18,12 @@ import {
   THEME_FOOD,
 } from "./libs/constants.js";
 import { CreditsController } from "./controllers/credits/creditsController.js";
-import { PlayView } from "./controllers/play/playView.js";
 
 export class GameManager {
   constructor() {
     this.difficulty = DIFFICULTY_EASY;
     this.theme = THEME_FOOD;
+    this.username = "";
     this.controller = null;
     this.$navigationContainer = document.getElementById("navigation-container");
     this.$contentContainer = document.getElementById("content-container");
@@ -60,6 +60,7 @@ export class GameManager {
     this.loadDifficulty();
     this.loadTheme();
     this.loadUsername();
+
     this.presenting(HOME_STATE);
 
     // if (this.username) {

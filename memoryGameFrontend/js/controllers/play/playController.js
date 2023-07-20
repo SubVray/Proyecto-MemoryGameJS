@@ -3,9 +3,9 @@ import { Controller } from "../controller.js";
 import { PlayService } from "./playService.js";
 
 export class PlayController extends Controller {
-  constructor(gameManager, parent, gameNav) {
+  constructor(gameManager, parent) {
     super(gameManager);
-    this.view = new PlayView(this, parent, gameNav);
+    this.view = new PlayView(this, parent);
     this.cards = null;
     this.service = new PlayService(this);
     this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
@@ -25,7 +25,7 @@ export class PlayController extends Controller {
   }
 
   resetGame() {
-    window.clearInterval(this.timer);
+    this.killGameTimer();
     this.timer = null;
     this.time = 0;
     this.clicks = 0;
@@ -38,6 +38,8 @@ export class PlayController extends Controller {
   }
   onCardSelected() {
     if (this.hiddenTimer !== null) return;
+    this.clicks++;
+    this.view.updateHUD(this.clicks, this.time);
     let customEvent = new CustomEvent("show-card-on-selected", {
       detail: {
         card: this.card,
@@ -72,6 +74,18 @@ export class PlayController extends Controller {
           composed: false,
         });
         this.view.container.dispatchEvent(customEvent);
+        // check if game is complete
+        if (this.checkGameCompleted()) {
+          this.killGameTimer();
+          let score = this.clicks + this.time;
+          this.service.sendScore(
+            score,
+            this.clicks,
+            this.time,
+            this.gameManager.username
+          );
+          // TODO: Show game complete controller?
+        }
       } else {
         this.hiddenTimer = window.setTimeout(() => {
           let customEvent = new CustomEvent("hide-selected-card", {
@@ -86,8 +100,21 @@ export class PlayController extends Controller {
           window.clearTimeout(this.hiddenTimer);
           this.hiddenTimer = null;
         }, 600);
-        //TODO: check if game is complete
       }
     }
+  }
+
+  killGameTimer() {
+    window.clearInterval(this.timer);
+    this.timer = null;
+  }
+  checkGameCompleted() {
+    for (let i = 0; i < this.cards.length; i++) {
+      const card = this.cards[i];
+      if (!card.isDiscovered) {
+        return false;
+      }
+    }
+    return true;
   }
 }
