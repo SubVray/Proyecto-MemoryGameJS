@@ -61,13 +61,11 @@ export class GameManager {
     this.loadTheme();
     this.loadUsername();
 
-    this.presenting(HOME_STATE);
-
-    // if (this.username) {
-    //   this.goTo(PLAY_STATE);
-    // } else {
-    //   this.goTo(LOGIN_STATE);
-    // }
+    if (this.username) {
+      this.goTo(HOME_STATE);
+    } else {
+      this.goTo(LOGIN_STATE);
+    }
   }
 
   presenting(state) {
@@ -87,11 +85,7 @@ export class GameManager {
         this.$title.innerHTML = "HOME";
         this.$title.className = "title-home";
         this.$backButton.classList.add("hidden");
-        this.controller = new HomeController(
-          this,
-          this.$contentContainer,
-          this.username
-        );
+        this.controller = new HomeController(this, this.$contentContainer);
         break;
       case PLAY_STATE:
         this.$title.innerHTML = "GAME";

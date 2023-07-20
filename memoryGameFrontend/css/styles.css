@@ -80,7 +80,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
   width: 100vw;
 }
 .content-container {
@@ -117,7 +117,7 @@ button {
   transition: 0.3s;
   width: 100%;
 }
-button:is(:hover, :focus, :active) {
+button:is(:hover, :active) {
   background-color: var(--secondary-color-logo);
   /* background-image: url("../src/images/bg-btn.gif"); */
   border: 1px solid var(--primary-color);

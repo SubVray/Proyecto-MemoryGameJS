@@ -16,3 +16,8 @@
 .star {
   font-size: 0.6em;
 }
+
+.active-difficulty {
+  background-color: var(--secondary-color-logo);
+  border: 1px solid var(--secondary-color-logo);
+}

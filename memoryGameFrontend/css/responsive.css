@@ -1,5 +1,14 @@
 /* ! 375px a 320px */
 @media (max-width: 375px) {
+  .main-container {
+    padding: 0;
+  }
+  .content-container {
+    border-radius: 0;
+  }
+  .navigation-container {
+    border-radius: 0;
+  }
   .logo-container {
     max-width: 150px;
     object-fit: cover;
@@ -36,6 +45,15 @@
 }
 /* ! 376px a 576px */
 @media (min-width: 376px) {
+  .main-container {
+    padding: 0;
+  }
+  .content-container {
+    border-radius: 0;
+  }
+  .navigation-container {
+    border-radius: 0;
+  }
   .logo-container {
     max-width: 180px;
     object-fit: cover;
@@ -72,6 +90,15 @@
 }
 /* ! 576px a 768px */
 @media (min-width: 576px) {
+  .main-container {
+    padding: 8px;
+  }
+  .content-container {
+    border-radius: 0px 0px 8px 8px;
+  }
+  .navigation-container {
+    border-radius: 8px 8px 0px 0px;
+  }
   button {
     height: 50px;
     max-width: 233px;
@@ -144,7 +171,7 @@
     height: 5.5em;
     width: 5.5em;
   }
-    .icon-8 {
+  .icon-8 {
     font-size: 3em;
   }
   .icon-12 {
