@@ -136,8 +136,8 @@
     max-width: 233px;
   }
   .card-8 {
-    height: 5em;
-    width: 5em;
+    height: 7em;
+    width: 7em;
   }
   .card-12 {
     height: 5em;
@@ -146,6 +146,15 @@
   .card-16 {
     height: 5em;
     width: 5em;
+  }
+  .icon-8 {
+    font-size: 3em;
+  }
+  .icon-12 {
+    font-size: 3em;
+  }
+  .icon-16 {
+    font-size: 3em;
   }
 }
 
