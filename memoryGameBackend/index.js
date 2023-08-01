@@ -4,6 +4,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Api Funcionado");
+});
+
 app.get("/api/cards/:difficulty/:theme", (req, res) => {
   let data = { cards: [] };
   if (req.params.difficulty !== null && req.params.theme !== null) {
