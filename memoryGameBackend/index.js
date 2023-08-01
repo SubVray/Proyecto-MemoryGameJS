@@ -4,7 +4,10 @@ const app = express();
 const { food, animals, cars, faces } = require("./themes");
 app.use(cors());
 
-app.get("/api", (req, res) => {
+app.get("/api/cars", (req, res) => {
+  res.send(cars);
+});
+app.get("/api/faces", (req, res) => {
   res.send(faces);
 });
 
