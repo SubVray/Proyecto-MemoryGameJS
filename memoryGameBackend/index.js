@@ -2,7 +2,7 @@ const cardsHandler = require("./api/cards");
 const scoresHandler = require("./api/scores");
 
 module.exports = (req, res) => {
-  const { pathname } = new URL(req.url, "http://localhost:3000");
+  const { pathname } = new URL(req.url);
 
   if (pathname.startsWith("/api/cards")) {
     return cardsHandler(req, res);
