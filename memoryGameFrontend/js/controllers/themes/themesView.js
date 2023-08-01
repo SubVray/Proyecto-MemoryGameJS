@@ -2,7 +2,7 @@ import {
   THEME_FACES,
   THEME_ANIMALS,
   THEME_FOOD,
-  THEME_TRANSPORTATION,
+  THEME_VEHICLES,
 } from "../../libs/constants.js";
 import { button } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
@@ -13,6 +13,7 @@ export class ThemesView extends ControllerView {
     this.container.id = "themes-view";
     this.elementsContainer.className = "bg themes-view";
     this.themeActive = themeActive;
+    console.log(this.themeActive);
 
     this.foodBtn = button(
       {
@@ -47,10 +48,10 @@ export class ThemesView extends ControllerView {
       {
         innerHTML: "🏍️ Vehicles 🏍️",
         className:
-          this.themeActive == "transportation"
+          this.themeActive == "vehicles"
             ? "btn-theme active-theme"
             : "btn-theme",
-        onclick: this.onButtonClick.bind(this, THEME_TRANSPORTATION),
+        onclick: this.onButtonClick.bind(this, THEME_VEHICLES),
       },
       this.elementsContainer
     );
@@ -72,7 +73,7 @@ export class ThemesView extends ControllerView {
       this.facesBtn.className = `btn-difficulty  `;
       this.animalsBtn.className = `btn-difficulty active-theme `;
       this.vehiclesBtn.className = `btn-difficulty  `;
-    } else if (this.themeActive == "transportation") {
+    } else if (this.themeActive == "vehicles") {
       this.foodBtn.className = `btn-difficulty  `;
       this.facesBtn.className = `btn-difficulty  `;
       this.animalsBtn.className = `btn-difficulty  `;

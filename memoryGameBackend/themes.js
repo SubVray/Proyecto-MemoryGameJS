@@ -325,4 +325,4 @@ const faces = [
   "👺",
   "🤡",
 ];
-module.exports = { food, animals, cars, faces };
+module.exports = { food, animals, vehicles, faces };

@@ -26,6 +26,7 @@ export class PlayService extends Service {
     };
     request.send();
   }
+  
   sendScore(score, clicks, time, username) {
     // console.log(username);
     // let url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores/`;
