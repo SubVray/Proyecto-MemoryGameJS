@@ -1,9 +1,9 @@
 {
   "name": "memorygamebackend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "server": "node server.js"
+    "server": "node index.js"
   },
   "keywords": [],
   "author": "Jim",
