@@ -1,19 +1,8 @@
-const cardsHandler = require("./api/cards");
-const scoresHandler = require("./api/scores");
+const express = require("express");
+const app = express();
 
-module.exports = (req, res) => {
-  const { pathname } = new URL(req.url);
+app.get("/api", (req, res) => {
+  res.send("hola");
+});
 
-  if (pathname.startsWith("/api/cards")) {
-    return cardsHandler(req, res);
-  }
-
-  if (pathname.startsWith("/api/scores")) {
-    return scoresHandler(req, res);
-  }
-
-  // Manejar otras rutas aquí si es necesario...
-
-  // Si no se encuentra la ruta, devolver 404
-  res.status(404).send("Not Found");
-};
+module.exports = app;
