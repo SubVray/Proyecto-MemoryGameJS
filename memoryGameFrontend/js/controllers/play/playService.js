@@ -9,7 +9,7 @@ export class PlayService extends Service {
   getCards(difficulty, theme) {
     let cards = [];
 
-    let url = `https://memory-game-backend-beryl.vercel.app/api/cards/${difficulty}/${theme}`;
+    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
     let request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {

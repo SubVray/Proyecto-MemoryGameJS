@@ -12,4 +12,5 @@ export const DIFFICULTY_HARD = 16;
 
 export const THEME_FACES = "faces";
 export const THEME_FOOD = "food";
-export const THEME_FLAGS = "flags";
+export const THEME_ANIMALS = "animals";
+export const THEME_TRANSPORTATION = "vehicles";

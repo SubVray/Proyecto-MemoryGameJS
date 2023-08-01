@@ -148,7 +148,7 @@ const animals = [
   "🦖",
 ];
 
-const cars = [
+const vehicles = [
   "🚗",
   "🚕",
   "🚙",

@@ -1,4 +1,9 @@
-import { THEME_FACES, THEME_FLAGS, THEME_FOOD } from "../../libs/constants.js";
+import {
+  THEME_FACES,
+  THEME_ANIMALS,
+  THEME_FOOD,
+  THEME_TRANSPORTATION,
+} from "../../libs/constants.js";
 import { button } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 
@@ -27,12 +32,25 @@ export class ThemesView extends ControllerView {
       },
       this.elementsContainer
     );
-    this.flagsBtn = button(
+    this.animalsBtn = button(
       {
-        innerHTML: "🎌 Flags 🎌",
+        innerHTML: "🐶 Animals 🐶",
         className:
-          this.themeActive == "flags" ? "btn-theme active-theme" : "btn-theme",
-        onclick: this.onButtonClick.bind(this, THEME_FLAGS),
+          this.themeActive == "animals"
+            ? "btn-theme active-theme"
+            : "btn-theme",
+        onclick: this.onButtonClick.bind(this, THEME_ANIMALS),
+      },
+      this.elementsContainer
+    );
+    this.vehiclesBtn = button(
+      {
+        innerHTML: "🏍️ Vehicles 🏍️",
+        className:
+          this.themeActive == "transportation"
+            ? "btn-theme active-theme"
+            : "btn-theme",
+        onclick: this.onButtonClick.bind(this, THEME_TRANSPORTATION),
       },
       this.elementsContainer
     );
@@ -42,15 +60,23 @@ export class ThemesView extends ControllerView {
     if (this.themeActive == "food") {
       this.foodBtn.className = `btn-btn-theme active-theme`;
       this.facesBtn.className = `btn-difficulty  `;
-      this.flagsBtn.className = `btn-difficulty  `;
+      this.animalsBtn.className = `btn-difficulty  `;
+      this.vehiclesBtn.className = `btn-difficulty  `;
     } else if (this.themeActive == "faces") {
       this.foodBtn.className = `btn-difficulty  `;
       this.facesBtn.className = `btn-difficulty active-theme`;
-      this.flagsBtn.className = `btn-difficulty  `;
-    } else if (this.themeActive == "flags") {
+      this.animalsBtn.className = `btn-difficulty  `;
+      this.vehiclesBtn.className = `btn-difficulty  `;
+    } else if (this.themeActive == "animals") {
       this.foodBtn.className = `btn-difficulty  `;
       this.facesBtn.className = `btn-difficulty  `;
-      this.flagsBtn.className = `btn-difficulty active-theme `;
+      this.animalsBtn.className = `btn-difficulty active-theme `;
+      this.vehiclesBtn.className = `btn-difficulty  `;
+    } else if (this.themeActive == "transportation") {
+      this.foodBtn.className = `btn-difficulty  `;
+      this.facesBtn.className = `btn-difficulty  `;
+      this.animalsBtn.className = `btn-difficulty  `;
+      this.vehiclesBtn.className = `btn-difficulty active-theme `;
     }
 
     let event = new CustomEvent("save-theme", {

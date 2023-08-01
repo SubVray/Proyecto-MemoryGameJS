@@ -7,8 +7,6 @@ import { LoginController } from "./controllers/login/loginController.js";
 import {
   CREDITS_STATE,
   DIFFICULTY_EASY,
-  DIFFICULTY_HARD,
-  DIFFICULTY_MEDIUM,
   DIFFICULTY_STATE,
   HOME_STATE,
   LOGIN_STATE,

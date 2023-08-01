@@ -1,4 +1,4 @@
-const { food, animals, cars, faces } = require("./themes");
+const { food, animals, vehicles, faces } = require("./themes");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -47,8 +47,8 @@ function getCards(difficulty, theme) {
     case "animals":
       iconList = animals;
       break;
-    case "cars":
-      iconList = cars;
+    case "vehicles":
+      iconList = vehicles;
       break;
     case "faces":
       iconList = faces;
