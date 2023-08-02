@@ -10,7 +10,7 @@ export class PlayService extends Service {
     let cards = [];
 
     // let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
-    let url = `http://localhost:3002/api/cards/${difficulty}/${theme}`;
+    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
     let request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {
@@ -29,7 +29,7 @@ export class PlayService extends Service {
   }
 
   sendScore(score, clicks, time, username) {
-    const url = "http://localhost:3002/users/score";
+    const url = "https://memory-game-backend-subvray.vercel.app/users/score";
     const requestData = {
       score: score,
       clicks: clicks,
