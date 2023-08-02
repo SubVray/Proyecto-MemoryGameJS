@@ -4,7 +4,7 @@ const User = require("../models/user.js");
 
 router.post("/score", (req, res) => {
   const { username, clicks, time, score } = req.body;
-  console.log(username)
+
   const newUserScore = new User({ username, clicks, time, score });
 
   newUserScore
