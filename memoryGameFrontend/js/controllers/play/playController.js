@@ -77,7 +77,7 @@ export class PlayController extends Controller {
         // check if game is complete
         if (this.checkGameCompleted()) {
           this.killGameTimer();
-          let score = this.clicks - this.time;
+          let score = this.clicks + this.time;
           this.service.sendScore(
             score,
             this.clicks,

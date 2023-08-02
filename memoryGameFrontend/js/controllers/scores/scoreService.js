@@ -6,14 +6,15 @@ export class ScoreService extends Service {
     super(controller);
   }
 
-  getScores() {
+  async getScores() {
     let scores = [];
-    let url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
-    let request = new XMLHttpRequest();
-    request.open("get", url);
-    request.onload = () => {
-      if (request.status === 200) {
-        let data = JSON.parse(request.response);
+    const url = "http://localhost:3002/users/get_scores";
+
+    try {
+      const response = await axios.get(url);
+
+      if (response.status === 200) {
+        const data = response.data;
         data.forEach((scoreData) => {
           let score = new Score(
             scoreData.clicks,
@@ -24,10 +25,12 @@ export class ScoreService extends Service {
           scores.push(score);
         });
       } else {
-        console.error("Error requesting cards");
+        console.error("Error requesting scores:", response.status);
       }
-      this.controller.showScores(scores);
-    };
-    request.send();
+    } catch (error) {
+      console.error("Error in the request:", error.message);
+    }
+
+    this.controller.showScores(scores);
   }
 }

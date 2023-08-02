@@ -4,18 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 app.use(cors());
-
-// La URL de conexión se leerá de la variable de entorno en Vercel
-const dbUri = process.env.MONGODB_URI;
-
-// Conecta a la base de datos
-mongoose
-  .connect(dbUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Conexión exitosa a MongoDB Atlas"))
-  .catch((err) => console.error("Error al conectar a MongoDB Atlas:", err));
+require("./database.js");
 
 // Rutas
 const userRoutes = require("./routes/user.routes.js");

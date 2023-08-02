@@ -9,7 +9,8 @@ export class PlayService extends Service {
   getCards(difficulty, theme) {
     let cards = [];
 
-    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
+    // let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
+    let url = `http://localhost:3002/api/cards/${difficulty}/${theme}`;
     let request = new XMLHttpRequest();
     request.open("get", url);
     request.onload = () => {
@@ -26,19 +27,23 @@ export class PlayService extends Service {
     };
     request.send();
   }
-  
+
   sendScore(score, clicks, time, username) {
-    // console.log(username);
-    // let url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores/`;
-    // let request = new XMLHttpRequest();
-    // request.open("post", url);
-    // request.send(
-    //   JSON.stringify({
-    //     score: score,
-    //     clicks: clicks,
-    //     time: time,
-    //     username: username,
-    //   })
-    // );
+    const url = "http://localhost:3002/users/score";
+    const requestData = {
+      score: score,
+      clicks: clicks,
+      time: time,
+      username: username,
+    };
+
+    axios
+      .post(url, requestData)
+      .then((response) => {
+        console.log("Puntaje enviado correctamente:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error al enviar el puntaje:", error.message);
+      });
   }
 }
