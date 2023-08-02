@@ -17,6 +17,10 @@ mongoose
   .then(() => console.log("Conexión exitosa a MongoDB Atlas"))
   .catch((err) => console.error("Error al conectar a MongoDB Atlas:", err));
 
+// Rutas
+const userRoutes = require("./routes/userRoutes");
+app.use("/users", userRoutes);
+
 app.get("/", (req, res) => {
   res.send("Api Funcionado");
 });
