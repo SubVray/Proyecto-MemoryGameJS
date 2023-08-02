@@ -18,7 +18,7 @@ mongoose
   .catch((err) => console.error("Error al conectar a MongoDB Atlas:", err));
 
 // Rutas
-const userRoutes = require("./routes/userRoutes");
+const userRoutes = require("./routes/user.routes.js");
 app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
