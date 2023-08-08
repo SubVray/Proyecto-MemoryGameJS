@@ -103,12 +103,12 @@ button {
   color: var(--light-color);
   cursor: pointer;
   display: flex;
-  flex-direction: column-reverse;
+  /* flex-direction: column-reverse; */
   font-size: 1.4em;
   font-weight: 400;
   height: 50px;
   justify-content: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   max-width: 230px;
   outline: var(--primary-color);
   position: relative;
@@ -117,6 +117,10 @@ button {
   transition: 0.3s;
   width: 100%;
 }
+.btn-difficulty {
+  flex-direction: column-reverse;
+}
+
 button:is(:hover, :active) {
   background-color: var(--secondary-color-logo);
   /* background-image: url("../src/images/bg-btn.gif"); */

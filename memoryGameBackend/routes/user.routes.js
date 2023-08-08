@@ -27,6 +27,7 @@ router.post("/post_score", async (req, res) => {
     res.status(500).json({ error: "Error al guardar/actualizar el usuario" });
   }
 });
+
 router.get("/get_scores", (req, res) => {
   User.find({})
     .sort({ score: -1 })

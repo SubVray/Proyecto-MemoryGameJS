@@ -77,10 +77,11 @@ export class PlayController extends Controller {
         // check if game is complete
         if (this.checkGameCompleted()) {
           this.killGameTimer();
+          const maxScore = 10000;
           const clickWeight = 0.5;
           const timeWeight = 0.5;
-          const clickScore = 10000 / (this.clicks + 1);
-          const timeScore = 10000 / (this.time + 1);
+          const clickScore = maxScore / (this.clicks + 1);
+          const timeScore = maxScore / (this.time + 1);
           const score = Math.round(
             clickScore * clickWeight + timeScore * timeWeight
           );
@@ -91,21 +92,33 @@ export class PlayController extends Controller {
             this.gameManager.username
           );
           // TODO: Show game complete controller?
-          Swal.fire({
-            title: "Game completed",
-            text: "Do you want to play again?",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes",
-            cancelButtonText: "No",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              document.querySelector(".btn-reset").click();
-            } else {
-              document.querySelector("#btn-back").click();
-            }
-          });
+          let cardsFinished = document.querySelectorAll(".card-game");
+          setTimeout(() => {
+            cardsFinished.forEach((cardFinished) => {
+              cardFinished.classList.add("game-finished");
+            });
+          }, 500);
+          setTimeout(() => {
+            cardsFinished.forEach((cardFinished) => {
+              cardFinished.classList.remove("game-finished");
+            });
+            Swal.fire({
+              title: "Game completed",
+              html: `${this.gameManager.username}<br>Score: ${score}`,
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Play again",
+              cancelButtonText: "Home",
+            }).then((result) => {
+              clearTimeout();
+              if (result.isConfirmed) {
+                document.querySelector(".btn-reset").click();
+              } else {
+                document.querySelector("#btn-back").click();
+              }
+            });
+          }, 1500);
         }
       } else {
         this.hiddenTimer = window.setTimeout(() => {
