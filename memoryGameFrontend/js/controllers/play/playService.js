@@ -30,7 +30,8 @@ export class PlayService extends Service {
 
   sendScore(score, clicks, time, username) {
     // const url = "http://localhost:3002/users/score";
-    const url = "https://memory-game-backend-subvray.vercel.app/users/score";
+    const url =
+      "https://memory-game-backend-subvray.vercel.app/api/scores/post_score";
     const requestData = {
       username: username,
       clicks: clicks,
