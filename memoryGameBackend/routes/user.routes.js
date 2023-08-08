@@ -4,9 +4,11 @@ const User = require("../models/user.js");
 
 router.post("/post_score", async (req, res) => {
   const { username, clicks, time, score } = req.body;
-
+  const lowercaseUsername = username.toLowerCase();
   try {
-    let existingUser = await User.findOne({ username });
+    let existingUser = await User.findOne({
+      username: { $regex: new RegExp("^" + lowercaseUsername, "i") },
+    });
 
     if (existingUser) {
       // Usuario existente, actualiza la puntuación
