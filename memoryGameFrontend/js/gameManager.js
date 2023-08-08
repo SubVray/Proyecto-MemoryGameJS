@@ -74,6 +74,7 @@ export class GameManager {
         this.$title.innerHTML = "LOGIN";
         this.$title.className = "title-l ";
         this.username = "";
+        this.saveUsername();
         this.controller = new LoginController(this, this.$contentContainer); // this es el GameManager
         break;
       case HOME_STATE:
