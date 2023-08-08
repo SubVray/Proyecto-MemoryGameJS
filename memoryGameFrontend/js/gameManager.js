@@ -59,11 +59,7 @@ export class GameManager {
     this.loadTheme();
     this.loadUsername();
 
-    if (this.username) {
-      this.goTo(HOME_STATE);
-    } else {
-      this.goTo(LOGIN_STATE);
-    }
+    this.presenting(HOME_STATE);
   }
 
   presenting(state) {
@@ -77,6 +73,7 @@ export class GameManager {
       case LOGIN_STATE:
         this.$title.innerHTML = "LOGIN";
         this.$title.className = "title-l ";
+        this.$backButton.classList.add("hidden");
         this.controller = new LoginController(this, this.$contentContainer); // this es el GameManager
         break;
       case HOME_STATE:
