@@ -9,7 +9,7 @@ app.use(cors());
 
 // Rutas
 const userRoutes = require("./routes/user.routes.js");
-app.use("/users", userRoutes);
+app.use("api/scores", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Api Funcionado");
@@ -32,9 +32,7 @@ app.get("/api/cards/:difficulty/:theme", (req, res) => {
   res.send(JSON.stringify(data));
 });
 
-app.get("/api/faces", (req, res) => {
-  res.send(faces);
-});
+
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
