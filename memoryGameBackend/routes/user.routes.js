@@ -29,6 +29,7 @@ router.post("/post_score", async (req, res) => {
 });
 router.get("/get_scores", (req, res) => {
   User.find({})
+    .sort({ score: -1 })
     .then((users) => {
       const scores = users.map((user) => ({
         username: user.username,
