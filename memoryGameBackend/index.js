@@ -9,7 +9,7 @@ app.use(cors());
 
 // Rutas
 const userRoutes = require("./routes/user.routes.js");
-app.use("api/scores", userRoutes);
+app.use("/api/scores", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Api Funcionado");

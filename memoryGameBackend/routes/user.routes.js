@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user.js");
 
-router.post("/score", (req, res) => {
+router.post("/post_score", (req, res) => {
   const { username, clicks, time, score } = req.body;
 
   const newUserScore = new User({ username, clicks, time, score });
