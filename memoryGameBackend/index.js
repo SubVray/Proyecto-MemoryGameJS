@@ -32,8 +32,6 @@ app.get("/api/cards/:difficulty/:theme", (req, res) => {
   res.send(JSON.stringify(data));
 });
 
-
-
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -67,15 +65,21 @@ function getCards(difficulty, theme) {
       break;
   }
 
-  for (let i = 0; i < difficulty; i++) {
+  let addedIndexes = new Set();
+
+  while (cards.length < difficulty) {
     let iconIndex = getIconIndex(-1, iconList);
-    let card = {
-      isDiscovered: false,
-      icon: iconList[iconIndex],
-      id: iconIndex,
-    };
-    cards.push(card);
+    if (!addedIndexes.has(iconIndex)) {
+      let card = {
+        isDiscovered: false,
+        icon: iconList[iconIndex],
+        id: iconIndex,
+      };
+      cards.push(card);
+      addedIndexes.add(iconIndex);
+    }
   }
+
   return cards;
 }
 
