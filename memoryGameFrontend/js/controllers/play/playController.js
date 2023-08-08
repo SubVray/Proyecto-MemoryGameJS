@@ -77,7 +77,13 @@ export class PlayController extends Controller {
         // check if game is complete
         if (this.checkGameCompleted()) {
           this.killGameTimer();
-          let score = this.clicks + this.time;
+          const clickWeight = 0.5;
+          const timeWeight = 0.5;
+          const clickScore = 10000 / (this.clicks + 1);
+          const timeScore = 10000 / (this.time + 1);
+          const score = Math.round(
+            clickScore * clickWeight + timeScore * timeWeight
+          );
           this.service.sendScore(
             score,
             this.clicks,
@@ -85,6 +91,21 @@ export class PlayController extends Controller {
             this.gameManager.username
           );
           // TODO: Show game complete controller?
+          Swal.fire({
+            title: "Game completed",
+            text: "Do you want to play again?",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes",
+            cancelButtonText: "No",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              document.querySelector(".btn-reset").click();
+            } else {
+              document.querySelector("#btn-back").click();
+            }
+          });
         }
       } else {
         this.hiddenTimer = window.setTimeout(() => {
