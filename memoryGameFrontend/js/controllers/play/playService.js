@@ -40,8 +40,20 @@ export class PlayService extends Service {
     };
     axios
       .post(url, requestData)
-      .then((response) => {
-        console.log("Puntaje enviado correctamente:", response.data);
+      .then(() => {
+        Swal.fire({
+          title: "Game completed",
+          text: "Do you want to play again?",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes",
+          cancelButtonText: "No",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.reload();
+          }
+        });
       })
       .catch((error) => {
         console.error("Error al enviar el puntaje:", error.message);
