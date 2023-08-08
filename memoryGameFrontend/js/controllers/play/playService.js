@@ -52,6 +52,8 @@ export class PlayService extends Service {
         }).then((result) => {
           if (result.isConfirmed) {
             document.querySelector(".btn-reset").click();
+          } else {
+            document.querySelector("#btn-back").click();
           }
         });
       })
