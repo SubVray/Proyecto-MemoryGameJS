@@ -9,7 +9,7 @@ export class ScoreService extends Service {
   async getScores() {
     let scores = [];
     const url =
-      "https://memory-game-backend-subvray.vercel.app/users/get_scores";
+      "https://memory-game-backend-subvray.vercel.app/api/scores/get_scores";
 
     try {
       const response = await axios.get(url);
