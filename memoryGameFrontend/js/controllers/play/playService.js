@@ -51,7 +51,7 @@ export class PlayService extends Service {
           cancelButtonText: "No",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.reload();
+            document.querySelector(".btn-reset").click();
           }
         });
       })
