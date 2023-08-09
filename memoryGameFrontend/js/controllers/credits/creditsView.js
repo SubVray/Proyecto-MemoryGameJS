@@ -1,4 +1,4 @@
-import { div, img, a } from "../../libs/html.js";
+import { div, img, a, p } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 
 export class CreditsView extends ControllerView {
@@ -12,10 +12,21 @@ export class CreditsView extends ControllerView {
       {
         src: "src/images/memory-game.png",
         alt: "logo",
-        className: "logo",
+        className: "logo-credits",
       },
       logoContainer
     );
+
+    p(
+      { innerHTML: "CENFOTEC", className: "text-credits" },
+      this.elementsContainer
+    );
+    p(
+      { innerHTML: "Jim Bolaños Zuñiga", className: "text-credits" },
+      this.elementsContainer
+    );
+    p({ innerHTML: "2023", className: "text-credits" }, this.elementsContainer);
+
     let logoContainerCreator = div(
       { className: "container-logo-creator" },
       this.elementsContainer

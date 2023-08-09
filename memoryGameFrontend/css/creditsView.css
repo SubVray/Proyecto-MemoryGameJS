@@ -30,3 +30,13 @@
   filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.384));
   scale: 1.05;
 }
+.text-credits {
+  font-size: 20px;
+}
+
+.logo-credits {
+  margin-bottom: 50px;
+  max-width: 200px;
+  min-width: 80px;
+  width: 100%;
+}

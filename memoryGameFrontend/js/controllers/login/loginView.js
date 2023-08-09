@@ -22,7 +22,10 @@ export class LoginView extends ControllerView {
       },
       this.elementsContainer
     );
-    let formLogin = form({ className: "form-login" }, this.elementsContainer);
+    let formLogin = form(
+      { className: "form-login", onsubmit: this.onLogin.bind(this) },
+      this.elementsContainer
+    );
     this.usernameInput = input(
       { required: true, placeholder: "Username" },
       formLogin
@@ -31,8 +34,8 @@ export class LoginView extends ControllerView {
       {
         innerHTML: "Login",
         className: "btn-login",
-        type: "button",
-        onclick: this.onLogin.bind(this),
+        type: "submit",
+        // onclick: this.onLogin.bind(this),
       },
       formLogin
     );
