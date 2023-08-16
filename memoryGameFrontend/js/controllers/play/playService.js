@@ -32,7 +32,7 @@ export class PlayService extends Service {
       clicks: clicks,
       time: time,
       score: score,
-      difficulty,
+      difficulty: difficulty,
     };
     axios
       .post(url, requestData)
