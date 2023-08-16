@@ -26,6 +26,10 @@ export class ScoreView extends View {
       { innerHTML: `Time: ${this.score.time}`, className: "time" },
       cardBodyLeft
     );
+    let difficulty = p(
+      { innerHTML: `difficulty: ${this.score.difficulty}`, className: "time" },
+      cardBodyLeft
+    );
 
     let scoreData = p(
       { innerHTML: `${this.score.score}`, className: "score-data" },

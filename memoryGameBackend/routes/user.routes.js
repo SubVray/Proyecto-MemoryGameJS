@@ -44,6 +44,7 @@ router.get("/get_scores", (req, res) => {
         clicks: user.clicks,
         time: user.time,
         score: user.score,
+        difficulty: user.difficulty,
       }));
       res.status(200).json(scores);
     })
