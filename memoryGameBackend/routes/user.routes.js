@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/user.js");
 
 router.post("/post_score", async (req, res) => {
-  const { username, clicks, time, score } = req.body;
+  const { username, clicks, time, score, difficulty } = req.body;
   const lowercaseUsername = username.toLowerCase();
   try {
     let existingUser = await User.findOne({
@@ -15,6 +15,7 @@ router.post("/post_score", async (req, res) => {
       existingUser.clicks = clicks;
       existingUser.time = time;
       existingUser.score = score;
+      existingUser.difficulty = difficulty;
       await existingUser.save();
       res.status(200).json(existingUser);
     } else {
@@ -24,6 +25,7 @@ router.post("/post_score", async (req, res) => {
         clicks,
         time,
         score,
+        difficulty,
       });
       const savedUser = await newUserScore.save();
       res.status(201).json(savedUser);
