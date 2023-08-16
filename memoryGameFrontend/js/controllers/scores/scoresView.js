@@ -13,6 +13,7 @@ export class ScoresView extends ControllerView {
   }
 
   showScore(scores) {
+    console.log(scores);
     scores.forEach((score) => {
       let viewScore = new ScoreView(this.cardContainer, score);
     });

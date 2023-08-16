@@ -47,7 +47,7 @@ export class PlayView extends ControllerView {
     let classNameCard = "";
     let classNameIcon = "";
     cards.forEach((card) => {
-      if (cards.length === 32) {
+      if (cards.length === 28) {
         classNameCard = "card-game card-16 ";
         classNameIcon = "icon icon-16";
         let cardView = new CardView(

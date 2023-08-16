@@ -21,7 +21,8 @@ export class ScoreService extends Service {
             scoreData.clicks,
             scoreData.score,
             scoreData.time,
-            scoreData.username
+            scoreData.username,
+            scoreData.difficulty
           );
           scores.push(score);
         });

@@ -30,8 +30,8 @@
     width: 4em;
   }
   .card-16 {
-    height: 3.4em;
-    width: 3.4em;
+    height: 3.8em;
+    width: 3.8em;
   }
   .icon-8 {
     font-size: 2.5em;
@@ -75,8 +75,8 @@
     width: 5em;
   }
   .card-16 {
-    height: 3.6em;
-    width: 3.6em;
+    height: 4.6em;
+    width: 4.6em;
   }
   .icon-8 {
     font-size: 2.5em;
@@ -144,8 +144,8 @@
     width: 5em;
   }
   .card-16 {
-    height: 5em;
-    width: 5em;
+    height: 6em;
+    width: 6em;
   }
   .icon-8 {
     font-size: 3em;
@@ -160,10 +160,18 @@
 
 /* ! 992px a 1200px */
 @media (min-width: 992px) {
+  .card-16 {
+    height: 6.5em;
+    width: 6.5em;
+  }
 }
 
 /* ! 1200px a 1400px */
 @media (min-width: 1200px) {
+  .card-16 {
+    height: 6em;
+    width: 6em;
+  }
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
@@ -173,12 +181,12 @@
     width: 7em;
   }
   .card-12 {
-    height: 6.5em;
-    width: 6.5em;
+    height: 7em;
+    width: 7em;
   }
   .card-16 {
-    height: 5.5em;
-    width: 5.5em;
+    height: 6.3em;
+    width: 6.3em;
   }
   .icon-8 {
     font-size: 3em;

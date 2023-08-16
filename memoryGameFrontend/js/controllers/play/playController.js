@@ -89,7 +89,8 @@ export class PlayController extends Controller {
             score,
             this.clicks,
             this.time,
-            this.gameManager.username
+            this.gameManager.username,
+            this.gameManager.difficulty
           );
           // TODO: Show game complete controller?
           let cardsFinished = document.querySelectorAll(".card-game");

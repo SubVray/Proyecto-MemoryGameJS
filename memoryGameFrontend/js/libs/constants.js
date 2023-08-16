@@ -8,7 +8,7 @@ export const CREDITS_STATE = 7;
 
 export const DIFFICULTY_EASY = 8;
 export const DIFFICULTY_MEDIUM = 12;
-export const DIFFICULTY_HARD = 16;
+export const DIFFICULTY_HARD = 14;
 
 export const THEME_FACES = "faces";
 export const THEME_FOOD = "food";

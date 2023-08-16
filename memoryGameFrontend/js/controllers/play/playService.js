@@ -9,35 +9,34 @@ export class PlayService extends Service {
   getCards(difficulty, theme) {
     let cards = [];
 
-    // let url = `http://localhost:3002/api/cards/${2}/${theme}`;
     let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
-    let request = new XMLHttpRequest();
-    request.open("get", url);
-    request.onload = () => {
-      if (request.status === 200) {
-        let data = JSON.parse(request.response);
+
+    try {
+      axios.get(url).then((response) => {
+        let data = response.data;
         data.cards.forEach((cardData) => {
           let card = new Card(cardData.id, cardData.icon);
           cards.push(card);
         });
-      } else {
-        console.error("Error requesting cards");
-      }
-      this.controller.showCards(cards);
-    };
-    request.send();
+        this.controller.showCards(cards);
+      });
+    } catch (error) {
+      console.error("Error requesting cards", error);
+    }
   }
 
-  sendScore(score, clicks, time, username) {
-    // const url = "http://localhost:3002/users/score";
+  sendScore(score, clicks, time, username, difficulty) {
+    // const url = "http://localhost:3000/api/scores/post_score";
     const url =
-      "https://memory-game-backend-subvray.vercel.app/api/scores/post_score";
+      "https://memory-game-backend-subvray.vercel.app/api/scores/post_scores";
     const requestData = {
       username: username,
       clicks: clicks,
       time: time,
       score: score,
+      difficulty: parseInt(difficulty),
     };
+
     axios
       .post(url, requestData)
       .then(() => {})
