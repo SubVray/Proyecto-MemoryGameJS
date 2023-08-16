@@ -27,7 +27,13 @@ export class ScoreView extends View {
       cardBodyLeft
     );
     let difficulty = p(
-      { innerHTML: `difficulty: ${this.score.difficulty}`, className: "time" },
+      {
+        innerHTML:
+          (this.score.difficulty === 8 && "Mode: Easy") ||
+          (this.score.difficulty === 12 && "Mode: Medium") ||
+          (this.score.difficulty === 14 && "Mode: Hard"),
+        className: "time",
+      },
       cardBodyLeft
     );
 

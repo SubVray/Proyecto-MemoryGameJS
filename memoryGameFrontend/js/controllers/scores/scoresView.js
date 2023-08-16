@@ -13,8 +13,8 @@ export class ScoresView extends ControllerView {
   }
 
   showScore(scores) {
-    console.log(scores);
     scores.forEach((score) => {
+      console.log(score);
       let viewScore = new ScoreView(this.cardContainer, score);
     });
   }
