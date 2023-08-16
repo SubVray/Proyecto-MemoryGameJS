@@ -32,11 +32,18 @@ export class HomeView extends ControllerView {
     this.loginBtn = button(
       {
         innerHTML: this.username ? `${this.username}` : "Login",
-        className: "btn-menu login-button",
+        className: this.username ? "btn-menu login-button" : "btn-menu",
         onclick: this.onButtonClick.bind(this, LOGIN_STATE),
       },
       this.elementsContainer
     );
+
+    this.loginBtn.addEventListener("mouseover", () => {
+      this.loginBtn.innerHTML = this.username ? "Sign off" : "Login";
+    });
+    this.loginBtn.addEventListener("mouseout", () => {
+      this.loginBtn.innerHTML = this.username ? `${this.username}` : "Login";
+    });
 
     let playBtn = button(
       {

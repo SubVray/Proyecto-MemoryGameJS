@@ -58,3 +58,8 @@
   margin: 0 auto;
   max-width: 100%;
 }
+.login-button {
+  background-color: #ff6868;
+  border: 1px solid #ff6868;
+  transition: 0.5s;
+}

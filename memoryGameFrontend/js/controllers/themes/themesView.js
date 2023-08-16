@@ -13,7 +13,6 @@ export class ThemesView extends ControllerView {
     this.container.id = "themes-view";
     this.elementsContainer.className = "bg themes-view";
     this.themeActive = themeActive;
-    console.log(this.themeActive);
 
     this.foodBtn = button(
       {

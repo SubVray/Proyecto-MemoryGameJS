@@ -13,9 +13,16 @@ export class ScoresView extends ControllerView {
   }
 
   showScore(scores) {
-    scores.forEach((score) => {
-      console.log(score);
-      let viewScore = new ScoreView(this.cardContainer, score);
-    });
+    if (scores.length > 0) {
+      scores.forEach((score) => {
+        let viewScore = new ScoreView(this.cardContainer, score);
+      });
+    } else {
+      let noScores = div(
+        { className: "no-scores-container" },
+        this.cardContainer
+      );
+      p({ innerHTML: "❌<br> No scores  ", className: "no-scores" }, noScores);
+    }
   }
 }
