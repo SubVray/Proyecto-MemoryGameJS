@@ -85,6 +85,7 @@ export class PlayController extends Controller {
           const score = Math.round(
             clickScore * clickWeight + timeScore * timeWeight
           );
+
           this.service.sendScore(
             score,
             this.clicks,

@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
   clicks: { type: Number, required: true },
   time: { type: Number, required: true },
   score: { type: Number, required: true },
-  difficulty: { type: Number, required: true },
 });
 
 const User = mongoose.model("User", userSchema);

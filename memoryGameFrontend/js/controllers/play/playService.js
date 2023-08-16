@@ -9,7 +9,7 @@ export class PlayService extends Service {
   getCards(difficulty, theme) {
     let cards = [];
 
-    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
+    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${2}/${theme}`;
 
     try {
       axios.get(url).then((response) => {
@@ -36,11 +36,11 @@ export class PlayService extends Service {
       score: score,
       difficulty: parseInt(difficulty),
     };
-
     axios
       .post(url, requestData)
       .then(() => {})
       .catch((error) => {
+        console.error(error);
         console.error("Error al enviar el puntaje:", error.message);
       });
   }
