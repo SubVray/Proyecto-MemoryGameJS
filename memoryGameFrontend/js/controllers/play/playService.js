@@ -34,14 +34,12 @@ export class PlayService extends Service {
       clicks: clicks,
       time: time,
       score: score,
-      difficulty: parseInt(difficulty),
     };
     axios
       .post(url, requestData)
       .then(() => {})
       .catch((error) => {
         console.error(error);
-        console.error("Error al enviar el puntaje:", error.message);
       });
   }
 }
