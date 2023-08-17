@@ -59,8 +59,7 @@ export class GameManager {
     this.loadTheme();
     this.loadUsername();
 
-    
-    this.presenting(HOME_STATE);
+    this.presenting(PLAY_STATE);
   }
 
   presenting(state) {

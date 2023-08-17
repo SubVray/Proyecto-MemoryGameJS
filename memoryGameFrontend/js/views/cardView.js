@@ -56,22 +56,24 @@ export class CardView extends View {
   showOnDiscovered() {
     if (this.card.isSelected && !this.card.isDiscovered) {
       this.card.isDiscovered = true;
-      // ? agrega la clase card-selected para hacer que haga la animación 3D
-      this.cardGame.classList.remove("card-selected");
-      this.cardGame.classList.add("card-discovered");
-      this.cardBack.classList.remove("icon-selected");
-      this.cardBack.classList.add("icon-discovered");
-      this.container.onclick = null;
-      window.removeEventListener("show-card-on-selected", (event) => {
-        this.showOnSelected();
-      });
+      setTimeout(() => {
+        // ? agrega la clase card-selected para hacer que haga la animación 3D
+        this.cardGame.classList.remove("card-selected");
+        this.cardGame.classList.add("card-discovered");
+        this.cardBack.classList.remove("icon-selected");
+        this.cardBack.classList.add("icon-discovered");
+        this.container.onclick = null;
+        window.removeEventListener("show-card-on-selected", (event) => {
+          this.showOnSelected();
+        });
 
-      window.removeEventListener("show-card-on-discovered", (event) => {
-        this.showOnDiscovered();
-      });
-      window.removeEventListener("hide-selected-card", (event) => {
-        this.hide();
-      });
+        window.removeEventListener("show-card-on-discovered", (event) => {
+          this.showOnDiscovered();
+        });
+        window.removeEventListener("hide-selected-card", (event) => {
+          this.hide();
+        });
+      },550);
     }
   }
 
