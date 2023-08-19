@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Configura opciones de CORS
 const corsOptions = {
-  origin: "https://memory-game-69f54.web.app/",
+  origin: ["https://memory-game-69f54.web.app",'https://memory-game-backend-subvray.vercel.app'],
   methods: "GET,PUT,POST,DELETE",
   optionsSuccessStatus: 204,
 };
