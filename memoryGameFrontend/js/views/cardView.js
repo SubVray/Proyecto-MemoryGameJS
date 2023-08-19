@@ -56,9 +56,7 @@ export class CardView extends View {
   showOnDiscovered() {
     if (this.card.isSelected && !this.card.isDiscovered) {
       this.card.isDiscovered = true;
-      let winSound = new Audio("../../../src/sounds/cardsDiscovered.mp3");
       setTimeout(() => {
-        winSound.play();
         // ? agrega la clase card-selected para hacer que haga la animación 3D
         this.cardGame.classList.remove("card-selected");
         this.cardGame.classList.add("card-discovered");
