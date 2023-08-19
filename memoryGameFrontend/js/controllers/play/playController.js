@@ -1,6 +1,7 @@
 import { PlayView } from "../play/playView.js";
 import { Controller } from "../controller.js";
 import { PlayService } from "./playService.js";
+import { animationConfetti } from "./confettiAnimation.js";
 
 export class PlayController extends Controller {
   constructor(gameManager, parent) {
@@ -110,6 +111,7 @@ export class PlayController extends Controller {
           }, 500);
           setTimeout(() => {
             winSound.play();
+            animationConfetti();
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.remove("game-finished");
             });
