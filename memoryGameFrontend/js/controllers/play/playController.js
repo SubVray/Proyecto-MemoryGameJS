@@ -95,12 +95,14 @@ export class PlayController extends Controller {
           );
           // TODO: Show game complete controller?
           let cardsFinished = document.querySelectorAll(".card-game");
+          let winSound = new Audio("../../../src/sounds/win.mp3");
           setTimeout(() => {
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.add("game-finished");
             });
           }, 500);
           setTimeout(() => {
+            winSound.play();
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.remove("game-finished");
             });

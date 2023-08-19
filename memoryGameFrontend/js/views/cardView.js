@@ -56,7 +56,9 @@ export class CardView extends View {
   showOnDiscovered() {
     if (this.card.isSelected && !this.card.isDiscovered) {
       this.card.isDiscovered = true;
+      let winSound = new Audio("../../../src/sounds/cardsDiscovered.mp3");
       setTimeout(() => {
+        winSound.play();
         // ? agrega la clase card-selected para hacer que haga la animación 3D
         this.cardGame.classList.remove("card-selected");
         this.cardGame.classList.add("card-discovered");
@@ -73,12 +75,14 @@ export class CardView extends View {
         window.removeEventListener("hide-selected-card", (event) => {
           this.hide();
         });
-      },550);
+      }, 550);
     }
   }
 
   hide() {
+    let winSound = new Audio("../../../src/sounds/cardsError.mp3");
     if (this.card.isSelected && !this.card.isDiscovered) {
+      winSound.play();
       this.card.isSelected = false;
       this.cardGame.classList.remove("card-selected");
       this.cardGame.classList.remove("card-discovered");
