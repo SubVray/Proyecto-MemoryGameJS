@@ -55,6 +55,7 @@ export class CardView extends View {
   }
   showOnDiscovered() {
     if (this.card.isSelected && !this.card.isDiscovered) {
+      
       this.card.isDiscovered = true;
       setTimeout(() => {
         // ? agrega la clase card-selected para hacer que haga la animación 3D

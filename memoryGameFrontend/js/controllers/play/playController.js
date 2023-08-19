@@ -68,7 +68,9 @@ export class PlayController extends Controller {
         let cardsDiscoveredSound = new Audio(
           "../../../src/sounds/cardsDiscovered.mp3"
         );
-        cardsDiscoveredSound.play();
+        setTimeout(() => {
+          cardsDiscoveredSound.play();
+        }, 550);
 
         let customEvent = new CustomEvent("show-card-on-discovered", {
           detail: {
@@ -131,7 +133,9 @@ export class PlayController extends Controller {
         }
       } else {
         let cardsErrorSound = new Audio("../../../src/sounds/cardsError.mp3");
-        cardsErrorSound.play();
+        setTimeout(() => {
+          cardsErrorSound.play();
+        }, 550);
         this.hiddenTimer = window.setTimeout(() => {
           let customEvent = new CustomEvent("hide-selected-card", {
             detail: {
