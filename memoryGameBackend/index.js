@@ -4,7 +4,15 @@ const cors = require("cors");
 const app = express();
 require("./database.js");
 app.use(express.json());
-app.use(cors());
+
+// Configura opciones de CORS
+const corsOptions = {
+  origin: "https://memory-game-69f54.web.app/",
+  methods: "GET,PUT,POST,DELETE",
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 // Rutas
 const userRoutes = require("./routes/user.routes.js");
