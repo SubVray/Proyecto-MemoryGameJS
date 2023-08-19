@@ -126,6 +126,8 @@ export class PlayController extends Controller {
         }
       } else {
         this.hiddenTimer = window.setTimeout(() => {
+          let winSound = new Audio("../../../src/sounds/cardsError.mp3");
+          winSound.play();
           let customEvent = new CustomEvent("hide-selected-card", {
             detail: {
               card: this.card,

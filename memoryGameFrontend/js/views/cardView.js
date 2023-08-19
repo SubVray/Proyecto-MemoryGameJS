@@ -80,9 +80,7 @@ export class CardView extends View {
   }
 
   hide() {
-    let winSound = new Audio("../../../src/sounds/cardsError.mp3");
     if (this.card.isSelected && !this.card.isDiscovered) {
-      winSound.play();
       this.card.isSelected = false;
       this.cardGame.classList.remove("card-selected");
       this.cardGame.classList.remove("card-discovered");
