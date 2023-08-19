@@ -39,7 +39,7 @@ export class DifficultyView extends ControllerView {
       {
         innerHTML: "Hard",
         className:
-          difficultyActive == 16
+          difficultyActive == 14
             ? "btn-difficulty active-difficulty"
             : "btn-difficulty ",
         onclick: this.onButtonClick.bind(this, DIFFICULTY_HARD),
@@ -67,7 +67,7 @@ export class DifficultyView extends ControllerView {
       this.easyBtn.className = `btn-difficulty  `;
       this.mediumBtn.className = `btn-difficulty active-difficulty `;
       this.hardBtn.className = `btn-difficulty  `;
-    } else if (this.difficultyActive == 16) {
+    } else if (this.difficultyActive == 14) {
       this.easyBtn.className = `btn-difficulty  `;
       this.mediumBtn.className = `btn-difficulty  `;
       this.hardBtn.className = `btn-difficulty active-difficulty `;
