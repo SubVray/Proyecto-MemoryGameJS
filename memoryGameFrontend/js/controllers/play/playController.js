@@ -65,8 +65,10 @@ export class PlayController extends Controller {
 
     if (cardSelected1 !== null && cardSelected2 !== null) {
       if (cardSelected1.id === cardSelected2.id) {
-        let winSound = new Audio("../../../src/sounds/cardsDiscovered.mp3");
-        winSound.play();
+        let cardsDiscoveredSound = new Audio(
+          "../../../src/sounds/cardsDiscovered.mp3"
+        );
+        cardsDiscoveredSound.play();
 
         let customEvent = new CustomEvent("show-card-on-discovered", {
           detail: {
@@ -128,9 +130,9 @@ export class PlayController extends Controller {
           }, 1500);
         }
       } else {
+        let cardsErrorSound = new Audio("../../../src/sounds/cardsError.mp3");
+        cardsErrorSound.play();
         this.hiddenTimer = window.setTimeout(() => {
-          let cardsError = new Audio("../../../src/sounds/cardsError.mp3");
-          cardsError.play();
           let customEvent = new CustomEvent("hide-selected-card", {
             detail: {
               card: this.card,
