@@ -75,7 +75,7 @@ export class PlayController extends Controller {
           "../../../src/sounds/cardsDiscovered.mp3"
         );
 
-        setTimeout(() => {
+        let cardsDiscoveredSoundTimeOut = setTimeout(() => {
           cardsDiscoveredSound.play();
         }, 550);
 
@@ -111,13 +111,13 @@ export class PlayController extends Controller {
           let cardsFinished = document.querySelectorAll(".card-game");
           let winSound = new Audio("../../../src/sounds/win.mp3");
 
-          setTimeout(() => {
+          let cardsFinishedTimeOut = setTimeout(() => {
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.add("game-finished");
             });
           }, 500);
 
-          setTimeout(() => {
+          let winSoundTimeOut = setTimeout(() => {
             winSound.play();
             animationConfetti();
             cardsFinished.forEach((cardFinished) => {
@@ -133,7 +133,9 @@ export class PlayController extends Controller {
               confirmButtonText: "Play again",
               cancelButtonText: "Home",
             }).then((result) => {
-              clearTimeout();
+              clearTimeout(winSoundTimeOut);
+              clearTimeout(cardsFinishedTimeOut);
+              clearTimeout(cardsDiscoveredSoundTimeOut);
 
               if (result.isConfirmed) {
                 document.querySelector(".btn-reset").click();
@@ -145,7 +147,7 @@ export class PlayController extends Controller {
         }
       } else {
         let cardsErrorSound = new Audio("../../../src/sounds/cardsError.mp3");
-        setTimeout(() => {
+        let cardsErrorSoundTimeOut = setTimeout(() => {
           cardsErrorSound.play();
         }, 550);
 
@@ -161,6 +163,7 @@ export class PlayController extends Controller {
 
           this.view.container.dispatchEvent(customEvent);
           window.clearTimeout(this.hiddenTimer);
+          clearTimeout(cardsErrorSoundTimeOut);
           this.hiddenTimer = null;
         }, 600);
       }
