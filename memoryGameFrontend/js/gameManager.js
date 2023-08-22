@@ -19,6 +19,7 @@ import { CreditsController } from "./controllers/credits/creditsController.js";
 
 export class GameManager {
   constructor() {
+    this.IS_DEVELOPMENT = false;
     this.difficulty = DIFFICULTY_EASY;
     this.theme = THEME_FOOD;
     this.username = "";

@@ -9,6 +9,8 @@ const corsOptions = {
   origin: [
     "https://memory-game-69f54.web.app",
     "https://memory-game-backend-subvray.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001",
   ],
   methods: "GET,PUT,POST,DELETE",
   optionsSuccessStatus: 204,

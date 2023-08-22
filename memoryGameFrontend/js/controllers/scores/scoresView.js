@@ -13,6 +13,7 @@ export class ScoresView extends ControllerView {
   }
 
   showScore(scores) {
+    this.cardContainer.innerHTML = "";
     if (scores.length > 0) {
       scores.forEach((score) => {
         let viewScore = new ScoreView(this.cardContainer, score);

@@ -1,3 +1,4 @@
+import { div, p } from "../../libs/html.js";
 import { Card } from "../../models/cardModel.js";
 import { Service } from "../service.js";
 
@@ -8,7 +9,19 @@ export class PlayService extends Service {
 
   getCards(difficulty, theme) {
     let cards = [];
-    let url = `https://memory-game-backend-subvray.vercel.app/api/cards/${difficulty}/${theme}`;
+    let url = `${this.baseURL}/api/cards/${difficulty}/${theme}`;
+
+    if (cards.length === 0) {
+      let loadingContainer = div(
+        { className: "loading-container" },
+        this.controller.view.cardContainer
+      );
+      p(
+        { innerHTML: "Loading cards", className: "text-cards-loading" },
+        loadingContainer
+      );
+      div({ className: "lds-dual-ring" }, loadingContainer);
+    }
 
     try {
       axios.get(url).then((response) => {
@@ -25,8 +38,7 @@ export class PlayService extends Service {
   }
 
   sendScore(score, clicks, time, username, difficulty) {
-    const url =
-      "https://memory-game-backend-subvray.vercel.app/api/scores/post_score";
+    const url = `${this.baseURL}/api/scores/post_score`;
     const requestData = {
       username: username,
       clicks: clicks,
@@ -34,6 +46,7 @@ export class PlayService extends Service {
       score: score,
       difficulty: difficulty,
     };
+
     axios
       .post(url, requestData)
       .then(() => {})

@@ -19,6 +19,7 @@ export class PlayController extends Controller {
     });
     this.hiddenTimer = null;
   }
+
   showCards(cards) {
     this.cards = cards;
     this.view.showCards(cards);
@@ -26,6 +27,7 @@ export class PlayController extends Controller {
   }
 
   resetGame() {
+    this.gameManager.controller.view.cardContainer.innerHTML = "";
     this.killGameTimer();
     this.timer = null;
     this.time = 0;
@@ -33,10 +35,12 @@ export class PlayController extends Controller {
     this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
     this.view.updateHUD(this.clicks, this.time);
   }
+
   gameTick() {
     this.time += 1;
     this.view.updateHUD(this.clicks, this.time);
   }
+
   onCardSelected() {
     if (this.hiddenTimer !== null) return;
     this.clicks++;
@@ -49,6 +53,7 @@ export class PlayController extends Controller {
       cancelable: true,
       composed: false,
     });
+
     this.view.container.dispatchEvent(customEvent);
 
     let cardSelected1 = null;
@@ -69,6 +74,7 @@ export class PlayController extends Controller {
         let cardsDiscoveredSound = new Audio(
           "../../../src/sounds/cardsDiscovered.mp3"
         );
+
         setTimeout(() => {
           cardsDiscoveredSound.play();
         }, 550);
@@ -101,20 +107,23 @@ export class PlayController extends Controller {
             this.gameManager.username,
             parseInt(this.gameManager.difficulty)
           );
-          // TODO: Show game complete controller?
+
           let cardsFinished = document.querySelectorAll(".card-game");
           let winSound = new Audio("../../../src/sounds/win.mp3");
+
           setTimeout(() => {
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.add("game-finished");
             });
           }, 500);
+
           setTimeout(() => {
             winSound.play();
             animationConfetti();
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.remove("game-finished");
             });
+
             Swal.fire({
               title: "Game completed",
               html: `${this.gameManager.username}<br>Score: ${score}`,
@@ -125,6 +134,7 @@ export class PlayController extends Controller {
               cancelButtonText: "Home",
             }).then((result) => {
               clearTimeout();
+
               if (result.isConfirmed) {
                 document.querySelector(".btn-reset").click();
               } else {
@@ -138,6 +148,7 @@ export class PlayController extends Controller {
         setTimeout(() => {
           cardsErrorSound.play();
         }, 550);
+
         this.hiddenTimer = window.setTimeout(() => {
           let customEvent = new CustomEvent("hide-selected-card", {
             detail: {
@@ -147,6 +158,7 @@ export class PlayController extends Controller {
             cancelable: true,
             composed: false,
           });
+
           this.view.container.dispatchEvent(customEvent);
           window.clearTimeout(this.hiddenTimer);
           this.hiddenTimer = null;
