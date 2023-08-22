@@ -39,7 +39,7 @@ export class PlayView extends ControllerView {
     );
 
     this.cardContainer = div(
-      { className: "container container-cards" },
+      { className: " container-cards" },
       this.elementsContainer
     );
   }
@@ -48,7 +48,7 @@ export class PlayView extends ControllerView {
     this.cardContainer.innerHTML = "";
     let classNameCard = "";
     let classNameIcon = "";
-    
+
     cards.forEach((card) => {
       if (cards.length === 28) {
         classNameCard = "card-game card-16 ";

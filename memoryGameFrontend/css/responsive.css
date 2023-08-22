@@ -18,29 +18,30 @@
     height: 50px;
     max-width: 215px;
   }
-  .container {
-    gap: 8px;
+  .container-cards {
+    max-width: 360px;
+    padding: 0 8px;
   }
   .card-8 {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
   }
   .card-12 {
-    height: 4em;
-    width: 4em;
+    height: 4.5rem;
+    width: 4.5rem;
   }
   .card-16 {
-    height: 3.8em;
-    width: 3.8em;
+    height: 4.08rem;
+    width: 4.08rem;
   }
   .icon-8 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   .icon-12 {
-    font-size: 2.2em;
+    font-size: 2.2rem;
   }
   .icon-16 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 }
 /* ! 376px a 576px */
@@ -48,9 +49,7 @@
   .main-container {
     padding: 0;
   }
-  .content-container {
-    border-radius: 0;
-  }
+  .content-container,
   .navigation-container {
     border-radius: 0;
   }
@@ -63,35 +62,37 @@
     height: 50px;
     max-width: 220px;
   }
-  .container {
-    gap: 8px;
+  .container-cards {
+    max-width: 390px;
   }
   .card-8 {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
   }
   .card-12 {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
   }
   .card-16 {
-    height: 4.6em;
-    width: 4.6em;
+    height: 4.6rem;
+    width: 4.6rem;
   }
   .icon-8 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   .icon-12 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   .icon-16 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 }
 /* ! 576px a 768px */
 @media (min-width: 576px) {
   .main-container {
-    padding: 8px;
+    max-width: 650px;
+    padding: 8px 0;
+    width: 100%;
   }
   .content-container {
     border-radius: 0px 0px 8px 8px;
@@ -103,28 +104,23 @@
     height: 50px;
     max-width: 233px;
   }
-  .main-container {
-    max-width: 650px;
-    width: 100%;
-  }
-  .container {
-    width: 90%;
+  .container-cards {
+    max-width: 450px;
   }
   .card-8 {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
   }
   .card-12 {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
   }
   .card-16 {
-    height: 4.6em;
-    width: 4.6em;
+    height: 4.6rem;
+    width: 4.6rem;
   }
 }
-
-/* ! 768px a 992px */
+/* ! 768px a 1400px */
 @media (min-width: 768px) {
   .logo-container {
     max-width: 200px;
@@ -136,65 +132,69 @@
     max-width: 233px;
   }
   .card-8 {
-    height: 7em;
-    width: 7em;
+    height: 6.5rem;
+    width: 6.5rem;
   }
   .card-12 {
-    height: 5em;
-    width: 5em;
+    height: 6rem;
+    width: 6rem;
   }
   .card-16 {
-    height: 6em;
-    width: 6em;
+    height: 5.5rem;
+    width: 5.5rem;
   }
   .icon-8 {
-    font-size: 3em;
+    font-size: 3rem;
   }
   .icon-12 {
-    font-size: 3em;
+    font-size: 3rem;
   }
   .icon-16 {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
-
-/* ! 992px a 1200px */
-@media (min-width: 992px) {
-  .card-16 {
-    height: 6.5em;
-    width: 6.5em;
-  }
-}
-
-/* ! 1200px a 1400px */
-@media (min-width: 1200px) {
-  .card-16 {
-    height: 6em;
-    width: 6em;
-  }
-}
-
-/* // XX-Large devices (larger desktops, 1400px and up) */
+/* ! 1400px a 1600 */
 @media (min-width: 1400px) {
   .card-8 {
-    height: 7em;
-    width: 7em;
+    height: 6.5rem;
+    width: 6.5rem;
   }
   .card-12 {
-    height: 7em;
-    width: 7em;
+    height: 6rem;
+    width: 6rem;
   }
   .card-16 {
-    height: 6.3em;
-    width: 6.3em;
+    height: 6rem;
+    width: 6rem;
   }
-  .icon-8 {
-    font-size: 3em;
+}
+/* ! 1600 a < */
+@media (min-width: 1600px) {
+  .card-8 {
+    height: 5.6rem;
+    width: 5.6rem;
   }
-  .icon-12 {
-    font-size: 3em;
+  .card-12 {
+    height: 5.6rem;
+    width: 5.6rem;
   }
-  .icon-16 {
-    font-size: 3em;
+  .card-16 {
+    height: 5.6rem;
+    width: 5.6rem;
+  }
+}
+/* ! 1600 a < */
+@media (min-width: 1800px) {
+  .card-8 {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  .card-12 {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  .card-16 {
+    height: 6.5rem;
+    width: 6.5rem;
   }
 }

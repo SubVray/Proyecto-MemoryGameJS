@@ -80,7 +80,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  padding: 8px;
+  padding: 8px 0;
   width: 100vw;
 }
 .content-container {
@@ -95,6 +95,8 @@ body {
   position: relative;
   width: 100%;
 }
+
+
 button {
   align-items: center;
   background-color: var(--primary-color);
@@ -150,3 +152,4 @@ button:is(:hover, :active) {
 .bg {
   background-color: var(--quaternary-color);
 }
+

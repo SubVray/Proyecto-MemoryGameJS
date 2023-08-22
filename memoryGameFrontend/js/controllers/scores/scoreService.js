@@ -42,7 +42,7 @@ export class ScoreService extends Service {
         console.error("Error requesting scores:", response.status);
       }
     } catch (error) {
-      console.error("Error in the request:", error.message);
+      console.error("Error in the request:", error);
     }
 
     this.controller.showScores(scores);

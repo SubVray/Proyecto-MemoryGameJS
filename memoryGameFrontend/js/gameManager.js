@@ -32,7 +32,6 @@ export class GameManager {
       "click",
       this.goTo.bind(this, HOME_STATE)
     );
-
     this.$contentContainer.addEventListener("home-button-click", (event) => {
       this.presenting(event.detail.state);
     });
@@ -147,7 +146,7 @@ export class GameManager {
   saveUsername() {
     localStorage.setItem("username", this.username);
   }
-  
+
   loadUsername() {
     if (localStorage.getItem("username")) {
       this.username = localStorage.getItem("username");

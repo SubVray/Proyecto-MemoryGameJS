@@ -71,12 +71,8 @@ export class PlayController extends Controller {
 
     if (cardSelected1 !== null && cardSelected2 !== null) {
       if (cardSelected1.id === cardSelected2.id) {
-        let cardsDiscoveredSound = new Audio(
-          "../../../src/sounds/cardsDiscovered.mp3"
-        );
-
         let cardsDiscoveredSoundTimeOut = setTimeout(() => {
-          cardsDiscoveredSound.play();
+          new Audio("../../../src/sounds/cardsDiscovered.mp3").play();
         }, 550);
 
         let customEvent = new CustomEvent("show-card-on-discovered", {
@@ -109,7 +105,6 @@ export class PlayController extends Controller {
           );
 
           let cardsFinished = document.querySelectorAll(".card-game");
-          let winSound = new Audio("../../../src/sounds/win.mp3");
 
           let cardsFinishedTimeOut = setTimeout(() => {
             cardsFinished.forEach((cardFinished) => {
@@ -118,7 +113,7 @@ export class PlayController extends Controller {
           }, 500);
 
           let winSoundTimeOut = setTimeout(() => {
-            winSound.play();
+            new Audio("../../../src/sounds/win.mp3").play();
             animationConfetti();
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.remove("game-finished");
@@ -146,9 +141,8 @@ export class PlayController extends Controller {
           }, 1500);
         }
       } else {
-        let cardsErrorSound = new Audio("../../../src/sounds/cardsError.mp3");
         let cardsErrorSoundTimeOut = setTimeout(() => {
-          cardsErrorSound.play();
+          new Audio("../../../src/sounds/cardsError.mp3").play();
         }, 550);
 
         this.hiddenTimer = window.setTimeout(() => {

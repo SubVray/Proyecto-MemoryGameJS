@@ -1,3 +1,11 @@
+.container-cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
 .card-game {
   perspective: 1000px;
   position: relative;
