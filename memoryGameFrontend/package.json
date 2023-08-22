@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "run": "gulp run",
-    "play": "gulp play"
+    "play": "gulp play",
+    "firebase": "firebase deploy"
   },
   "keywords": [],
   "author": "",
