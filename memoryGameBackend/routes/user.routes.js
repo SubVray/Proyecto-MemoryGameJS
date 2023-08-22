@@ -9,7 +9,6 @@ router.post("/post_score", async (req, res) => {
     let existingUser = await User.findOne({
       username: { $regex: new RegExp("^" + lowercaseUsername, "i") },
     });
-
     if (existingUser) {
       // Usuario existente, actualiza la puntuación
       existingUser.clicks = clicks;
@@ -27,6 +26,7 @@ router.post("/post_score", async (req, res) => {
         score,
         difficulty,
       });
+      
       const savedUser = await newUserScore.save();
       res.status(201).json(savedUser);
     }
