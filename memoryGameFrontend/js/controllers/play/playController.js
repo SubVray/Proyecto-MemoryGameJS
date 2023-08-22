@@ -87,8 +87,8 @@ export class PlayController extends Controller {
           cancelable: true,
           composed: false,
         });
+
         this.view.container.dispatchEvent(customEvent);
-        // check if game is complete
         if (this.checkGameCompleted()) {
           this.killGameTimer();
           const maxScore = 10000;

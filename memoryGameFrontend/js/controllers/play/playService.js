@@ -16,10 +16,12 @@ export class PlayService extends Service {
         { className: "loading-container" },
         this.controller.view.cardContainer
       );
+
       p(
         { innerHTML: "Loading cards", className: "text-cards-loading" },
         loadingContainer
       );
+
       div({ className: "lds-dual-ring" }, loadingContainer);
     }
 

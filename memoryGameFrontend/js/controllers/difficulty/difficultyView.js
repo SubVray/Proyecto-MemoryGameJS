@@ -24,6 +24,7 @@ export class DifficultyView extends ControllerView {
       },
       this.elementsContainer
     );
+
     this.mediumBtn = button(
       {
         innerHTML: "Medium",
@@ -35,6 +36,7 @@ export class DifficultyView extends ControllerView {
       },
       this.elementsContainer
     );
+
     this.hardBtn = button(
       {
         innerHTML: "Hard",
@@ -46,11 +48,14 @@ export class DifficultyView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let easyStar = span({ innerHTML: "⭐", className: "star" }, this.easyBtn);
+
     let mediumStar = span(
       { innerHTML: "⭐⭐", className: "star" },
       this.mediumBtn
     );
+
     let hardStar = span(
       { innerHTML: "⭐⭐⭐", className: "star" },
       this.hardBtn
@@ -81,6 +86,7 @@ export class DifficultyView extends ControllerView {
       cancelable: true,
       composed: false,
     });
+
     this.container.dispatchEvent(event);
   }
 }

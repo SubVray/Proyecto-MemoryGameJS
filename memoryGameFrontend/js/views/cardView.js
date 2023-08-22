@@ -8,13 +8,16 @@ export class CardView extends View {
     this.container.className = classNameCard; //! card container card box
 
     this.cardGame = div({ className: "base-card" }, this.container);
+
     this.cardFront = div({ className: "front" }, this.cardGame);
+
     this.cardBack = div({ className: "front back" }, this.cardGame);
 
     this.cardIconFront = span(
       { innerHTML: ``, className: `${classNameIcon}` },
       this.cardFront
     );
+
     this.cardIconBack = span(
       { innerHTML: `${this.card.icon}`, className: `${classNameIcon}` },
       this.cardBack
@@ -28,6 +31,7 @@ export class CardView extends View {
     window.addEventListener("show-card-on-discovered", (event) => {
       this.showOnDiscovered();
     });
+
     window.addEventListener("hide-selected-card", (event) => {
       this.hide();
     });
@@ -55,7 +59,6 @@ export class CardView extends View {
   }
   showOnDiscovered() {
     if (this.card.isSelected && !this.card.isDiscovered) {
-      
       this.card.isDiscovered = true;
       setTimeout(() => {
         // ? agrega la clase card-selected para hacer que haga la animación 3D
@@ -64,6 +67,7 @@ export class CardView extends View {
         this.cardBack.classList.remove("icon-selected");
         this.cardBack.classList.add("icon-discovered");
         this.container.onclick = null;
+
         window.removeEventListener("show-card-on-selected", (event) => {
           this.showOnSelected();
         });
@@ -71,6 +75,7 @@ export class CardView extends View {
         window.removeEventListener("show-card-on-discovered", (event) => {
           this.showOnDiscovered();
         });
+
         window.removeEventListener("hide-selected-card", (event) => {
           this.hide();
         });

@@ -20,6 +20,7 @@ export class ScoreService extends Service {
         { innerHTML: "Loading scores", className: "text-cards-loading" },
         loadingContainer
       );
+      
       div({ className: "lds-dual-ring" }, loadingContainer);
     }
 

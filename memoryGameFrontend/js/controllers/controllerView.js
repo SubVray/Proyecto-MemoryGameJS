@@ -9,14 +9,16 @@ export class ControllerView extends View {
       { className: "controller-view-fade-container" },
       this.container
     );
+
     this.elementsContainer = div(
       { className: "controller-view-elementsContainer" },
       this.container
     );
-    this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)`;
 
+    this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)`;
     this.show();
   }
+  
   delete() {
     this.parent.removeChild(this.container);
   }

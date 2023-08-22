@@ -15,6 +15,7 @@ export class LoginView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let text = p(
       {
         innerHTML: "Enter Username to play",
@@ -22,14 +23,17 @@ export class LoginView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let formLogin = form(
       { className: "form-login", onsubmit: this.onLogin.bind(this) },
       this.elementsContainer
     );
+
     this.usernameInput = input(
       { required: true, placeholder: "Username" },
       formLogin
     );
+
     this.loginBtn = button(
       {
         innerHTML: "Login",
@@ -53,7 +57,6 @@ export class LoginView extends ControllerView {
         composed: false,
       });
       this.container.dispatchEvent(customEvent);
-    } else {
     }
   }
 }

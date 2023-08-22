@@ -23,6 +23,7 @@ export class ThemesView extends ControllerView {
       },
       this.elementsContainer
     );
+
     this.facesBtn = button(
       {
         innerHTML: "😁 Faces 😁",
@@ -32,6 +33,7 @@ export class ThemesView extends ControllerView {
       },
       this.elementsContainer
     );
+
     this.animalsBtn = button(
       {
         innerHTML: "🐶 Animals 🐶",
@@ -43,6 +45,7 @@ export class ThemesView extends ControllerView {
       },
       this.elementsContainer
     );
+
     this.vehiclesBtn = button(
       {
         innerHTML: "🏍️ Vehicles 🏍️",

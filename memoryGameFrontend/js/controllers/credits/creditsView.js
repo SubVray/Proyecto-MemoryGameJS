@@ -8,6 +8,7 @@ export class CreditsView extends ControllerView {
     this.elementsContainer.className = "bg  themes-view";
 
     let logoContainer = div({ className: "" }, this.elementsContainer);
+
     let logo = img(
       {
         src: "src/images/memory-game.png",
@@ -21,16 +22,19 @@ export class CreditsView extends ControllerView {
       { innerHTML: "CENFOTEC", className: "text-credits" },
       this.elementsContainer
     );
+
     p(
       { innerHTML: "Jim Bolaños Zuñiga", className: "text-credits" },
       this.elementsContainer
     );
+
     p({ innerHTML: "2023", className: "text-credits" }, this.elementsContainer);
 
     let logoContainerCreator = div(
       { className: "container-logo-creator" },
       this.elementsContainer
     );
+
     let CREATOR = a(
       {
         innerHTML: "",
@@ -40,6 +44,7 @@ export class CreditsView extends ControllerView {
       },
       logoContainerCreator
     );
+
     let logoCreator = img(
       {
         src: "src/images/SubVray_Logo_Transparente.png",

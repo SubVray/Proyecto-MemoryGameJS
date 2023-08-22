@@ -50,6 +50,7 @@ export class GameManager {
       this.theme = event.detail.theme;
       this.saveTheme();
     });
+
     this.$contentContainer.addEventListener("user-login", (event) => {
       this.username = event.detail.username;
       this.saveUsername();
@@ -146,6 +147,7 @@ export class GameManager {
   saveUsername() {
     localStorage.setItem("username", this.username);
   }
+  
   loadUsername() {
     if (localStorage.getItem("username")) {
       this.username = localStorage.getItem("username");

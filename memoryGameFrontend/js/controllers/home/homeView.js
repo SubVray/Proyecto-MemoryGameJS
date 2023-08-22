@@ -20,6 +20,7 @@ export class HomeView extends ControllerView {
       { className: "logo-container" },
       this.elementsContainer
     );
+
     let logo = img(
       {
         src: "src/images/memory-game.png",
@@ -41,6 +42,7 @@ export class HomeView extends ControllerView {
     this.loginBtn.addEventListener("mouseover", () => {
       this.loginBtn.innerHTML = this.username ? "Sign off" : "Login";
     });
+
     this.loginBtn.addEventListener("mouseout", () => {
       this.loginBtn.innerHTML = this.username ? `${this.username}` : "Login";
     });
@@ -55,6 +57,7 @@ export class HomeView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let scoreBtn = button(
       {
         innerHTML: "Scores",
@@ -65,6 +68,7 @@ export class HomeView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let difficultyBtn = button(
       {
         innerHTML: "Difficulty",
@@ -75,6 +79,7 @@ export class HomeView extends ControllerView {
       },
       this.elementsContainer
     );
+
     let themesBtn = button(
       {
         innerHTML: "Themes",
@@ -83,9 +88,9 @@ export class HomeView extends ControllerView {
           : "disable-btn btn-menu play-button",
         onclick: this.onButtonClick.bind(this, THEMES_STATE),
       },
-
       this.elementsContainer
     );
+
     let creditsBtn = button(
       {
         innerHTML: "Credits",

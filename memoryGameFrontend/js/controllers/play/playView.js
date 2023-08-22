@@ -12,6 +12,7 @@ export class PlayView extends ControllerView {
       { id: "game-nav", className: "game-nav bg" },
       this.elementsContainer
     );
+
     let gameNavContainer1 = div({ className: "game-nav-container1" }, navHub);
     let gameNavContainer2 = div({ className: "game-nav-container2" }, navHub);
     let clicks = p(
@@ -21,6 +22,7 @@ export class PlayView extends ControllerView {
       },
       gameNavContainer1
     );
+
     this.clickText = span({ innerHTML: `0` }, clicks);
 
     let time = p({ innerHTML: `Time: `, className: "time" }, gameNavContainer1);
@@ -46,6 +48,7 @@ export class PlayView extends ControllerView {
     this.cardContainer.innerHTML = "";
     let classNameCard = "";
     let classNameIcon = "";
+    
     cards.forEach((card) => {
       if (cards.length === 28) {
         classNameCard = "card-game card-16 ";

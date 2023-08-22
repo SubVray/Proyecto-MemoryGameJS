@@ -23,6 +23,7 @@ export class ScoresView extends ControllerView {
         { className: "no-scores-container" },
         this.cardContainer
       );
+
       p({ innerHTML: "❌<br> No scores  ", className: "no-scores" }, noScores);
     }
   }
