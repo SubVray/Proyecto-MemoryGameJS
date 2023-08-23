@@ -49,35 +49,27 @@ export class PlayView extends ControllerView {
     let classNameCard = "";
     let classNameIcon = "";
 
-    cards.forEach((card) => {
-      if (cards.length === 28) {
-        classNameCard = "card-game card-16 ";
-        classNameIcon = "icon icon-16";
-        let cardView = new CardView(
-          this.cardContainer,
-          card,
-          classNameCard,
-          classNameIcon
-        );
-      } else if (cards.length === 24) {
-        classNameCard = "card-game card-12 ";
-        classNameIcon = "icon icon-12";
-        let cardView = new CardView(
-          this.cardContainer,
-          card,
-          classNameCard,
-          classNameIcon
-        );
-      } else {
-        classNameCard = "card-game card-8 ";
-        classNameIcon = "icon icon-8";
-        let cardView = new CardView(
-          this.cardContainer,
-          card,
-          classNameCard,
-          classNameIcon
-        );
+    cards.forEach((card, index) => {
+      switch (cards.length) {
+        case 28:
+          classNameCard = "card-16 ";
+          classNameIcon = "icon icon-16";
+          break;
+        case 24:
+          classNameCard = "card-12 ";
+          classNameIcon = "icon icon-12";
+          break;
+        default:
+          classNameCard = "card-8 ";
+          classNameIcon = "icon icon-8";
       }
+
+      const cardView = new CardView(
+        this.cardContainer,
+        card,
+        classNameCard,
+        classNameIcon
+      );
     });
   }
   onReset() {

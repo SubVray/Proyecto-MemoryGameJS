@@ -73,6 +73,7 @@ export class PlayController extends Controller {
       if (cardSelected1.id === cardSelected2.id) {
         let cardsDiscoveredSoundTimeOut = setTimeout(() => {
           new Audio("../../../src/sounds/cardsDiscovered.mp3").play();
+          clearTimeout(cardsDiscoveredSoundTimeOut);
         }, 550);
 
         let customEvent = new CustomEvent("show-card-on-discovered", {
@@ -85,6 +86,7 @@ export class PlayController extends Controller {
         });
 
         this.view.container.dispatchEvent(customEvent);
+
         if (this.checkGameCompleted()) {
           this.killGameTimer();
           const maxScore = 10000;
@@ -104,19 +106,36 @@ export class PlayController extends Controller {
             parseInt(this.gameManager.difficulty)
           );
 
-          let cardsFinished = document.querySelectorAll(".card-game");
+          let cardsFinished = document.querySelectorAll(".base-card");
+          let backCards = document.querySelectorAll(".card-back");
+          let frontCards = document.querySelectorAll(".card-front");
 
           let cardsFinishedTimeOut = setTimeout(() => {
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.add("game-finished");
             });
+            frontCards.forEach((frontCard) => {
+              frontCard.style.transform = "rotateY(0deg)";
+            });
+            backCards.forEach((backCard) => {
+              backCard.style.display = "none";
+            });
+            clearTimeout(cardsFinishedTimeOut);
           }, 500);
 
           let winSoundTimeOut = setTimeout(() => {
             new Audio("../../../src/sounds/win.mp3").play();
+
             animationConfetti();
+
             cardsFinished.forEach((cardFinished) => {
               cardFinished.classList.remove("game-finished");
+            });
+            backCards.forEach((backCard) => {
+              backCard.style.transform = "rotateY(180deg)";
+            });
+            backCards.forEach((backCard) => {
+              backCard.style.display = "flex";
             });
 
             Swal.fire({
@@ -127,22 +146,22 @@ export class PlayController extends Controller {
               cancelButtonColor: "#d33",
               confirmButtonText: "Play again",
               cancelButtonText: "Home",
+              allowOutsideClick: false,
+              allowEscapeKey: false,
             }).then((result) => {
-              clearTimeout(winSoundTimeOut);
-              clearTimeout(cardsFinishedTimeOut);
-              clearTimeout(cardsDiscoveredSoundTimeOut);
-
               if (result.isConfirmed) {
                 document.querySelector(".btn-reset").click();
               } else {
                 document.querySelector("#btn-back").click();
               }
             });
+            clearTimeout(winSoundTimeOut);
           }, 1500);
         }
       } else {
         let cardsErrorSoundTimeOut = setTimeout(() => {
           new Audio("../../../src/sounds/cardsError.mp3").play();
+          clearTimeout(cardsErrorSoundTimeOut);
         }, 550);
 
         this.hiddenTimer = window.setTimeout(() => {
@@ -157,7 +176,6 @@ export class PlayController extends Controller {
 
           this.view.container.dispatchEvent(customEvent);
           window.clearTimeout(this.hiddenTimer);
-          clearTimeout(cardsErrorSoundTimeOut);
           this.hiddenTimer = null;
         }, 600);
       }

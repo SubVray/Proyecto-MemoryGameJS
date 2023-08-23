@@ -26,7 +26,7 @@ router.post("/post_score", async (req, res) => {
         score,
         difficulty,
       });
-      
+
       const savedUser = await newUserScore.save();
       res.status(201).json(savedUser);
     }
@@ -36,8 +36,13 @@ router.post("/post_score", async (req, res) => {
 });
 
 router.get("/get_scores", (req, res) => {
+  const page = parseInt(req.query.page) || 1; // Obtener el número de página de los parámetros de consulta
+  const perPage = parseInt(req.query.perPage) || 10; // Cantidad de elementos por página
+
   User.find({})
     .sort({ score: -1 })
+    .skip((page - 1) * perPage) // Salta los elementos necesarios según la página
+    .limit(perPage) // Limita la cantidad de elementos por página
     .then((users) => {
       const scores = users.map((user) => ({
         username: user.username,
@@ -46,6 +51,7 @@ router.get("/get_scores", (req, res) => {
         score: user.score,
         difficulty: user.difficulty,
       }));
+
       res.status(200).json(scores);
     })
     .catch((err) => {

@@ -10,6 +10,7 @@ export class ScoresView extends ControllerView {
       { className: "card-container x" },
       this.elementsContainer
     );
+
   }
 
   showScore(scores) {

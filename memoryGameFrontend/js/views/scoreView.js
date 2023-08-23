@@ -46,5 +46,16 @@ export class ScoreView extends View {
     );
 
     let scoreT = p({ innerHTML: `Score`, className: "score" }, cardBodyRight);
+
+    gsap.to(".card-container .card", {
+      opacity: 1,
+      stagger: {
+        each: 0.5,
+        grid: "auto",
+        from: "start",
+        amount: 0.5,
+        ease: "power2.inOut",
+      },
+    });
   }
 }

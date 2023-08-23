@@ -9,6 +9,7 @@ export class ScoresController extends Controller {
     this.service = new ScoreService(this);
     this.service.getScores();
     this.scores = [];
+
   }
 
   showScores(scores) {

@@ -8,7 +8,7 @@ export class ScoreService extends Service {
 
   async getScores() {
     let scores = [];
-    const url = `${this.baseURL}/api/scores/get_scores`;
+    const url = `${this.baseURL}/api/scores/get_scores?page=1&perPage=10`;
 
     if (scores.length === 0) {
       let loadingContainer = div(
@@ -20,7 +20,7 @@ export class ScoreService extends Service {
         { innerHTML: "Loading scores", className: "text-cards-loading" },
         loadingContainer
       );
-      
+
       div({ className: "lds-dual-ring" }, loadingContainer);
     }
 

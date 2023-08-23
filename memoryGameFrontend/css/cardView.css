@@ -6,44 +6,50 @@
   justify-content: center;
 }
 
-.card-game {
-  perspective: 1000px;
-  position: relative;
-}
-
 .base-card {
   align-items: center;
   background-color: #fff;
   border-radius: 8px;
+  border-radius: 8px;
   display: flex;
   height: 100%;
   justify-content: center;
+  opacity: 0;
+  perspective: 1000px;
+  position: relative;
   transform-style: preserve-3d;
-  transition: all 0.5s linear;
   width: 100%;
 }
 
-.front {
+.card-face {
+  align-items: center;
   backface-visibility: hidden;
-  background-color: #ffffff;
-  background-image: url(../src/images/help-circle.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 8px;
+  display: flex;
   height: 100%;
+  justify-content: center;
   position: absolute;
   width: 100%;
 }
-.front.back {
+.card-front {
   align-items: center;
   backface-visibility: hidden;
+  background-color: #6fb2ff;
   background-image: none;
+  border: 1px solid rgba(49, 49, 49, 0.267);
+  box-shadow: 0 0 1.5px 0.5px black;
   display: flex;
   height: 90%;
   justify-content: center;
   transform: rotateY(180deg);
   width: 90%;
+}
+.card-back {
+  background-color: #ffffff;
+  background-image: url(../src/images/help-circle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .icon {
@@ -60,49 +66,6 @@
 }
 .card-16 {
   border-radius: 8px;
-}
-
-.card-selected {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  transform: rotateY(180deg);
-  transition: all 0.5s linear;
-}
-.icon-selected {
-  background-color: #6fb2ff;
-  border: 1px solid rgba(49, 49, 49, 0.267);
-  box-shadow: 0 0 1.5px 0.5px black;
-}
-
-.card-discovered {
-  align-items: center;
-  animation: cardDiscovered 1s;
-  display: flex;
-  justify-content: center;
-  transform: rotateY(180deg);
-  transition: all 0.5s linear;
-}
-.icon-discovered {
-  background-color: #fffd6f;
-  border: 1px solid rgba(49, 49, 49, 0.267);
-  box-shadow: 0 0 1.5px 0.5px black;
-}
-
-@keyframes cardDiscovered {
-  0%,
-  100% {
-    scale: 1;
-  }
-  25% {
-    scale: 1.05;
-  }
-  50% {
-    scale: 1;
-  }
-  75% {
-    scale: 1.05;
-  }
 }
 
 .card-8- {
@@ -142,18 +105,18 @@
   0%,
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0);
+    transform: scale(1) rotateZ(0);
   }
   25% {
     opacity: 0.8;
-    transform: scale(1.05) rotate(5deg);
+    transform: scale(1.05) rotateZ(5deg);
   }
   50% {
     opacity: 1;
-    transform: scale(1) rotate(0);
+    transform: scale(1) rotateZ(0);
   }
   75% {
     opacity: 0.8;
-    transform: scale(1.05) rotate(-5deg);
+    transform: scale(1.05) rotateZ(-5deg);
   }
 }
